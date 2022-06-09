@@ -2297,17 +2297,16 @@
     "kind":"x509"
   },
   {
-    "name":"cus_hashing_algorithm_greater_than",
-    "description":"Hashing algorithm of the certificate is greater than",
+    "name":"cus_public_key_algorithm",
+    "description":"Public key algorithm of the certificate",
     "uuid":"6dcf0d44-ddc3-11ec-9d64-0242ac120002",
     "kind":"x509",
-    "custom": true,
     "attributes":[
       {
         "name":"condition",
         "uuid":"166b5cf52-63f2-11ec-90d6-0242ac120013",
         "label":"Condition",
-        "type":"STRING",
+        "type":"LIST",
         "required":true,
         "readOnly":false,
         "editable":false,
@@ -2316,14 +2315,14 @@
         "description":"Select the condition to apply",
         "value":[
           "Equals",
-          "Not Equals"
+          "NotEquals"
         ]
       },
       {
         "name":"algorithm",
         "uuid":"166b5cf52-63f2-11ec-90d6-0242ac120003",
-        "label":"Hashing Algorithm",
-        "type":"STRING",
+        "label":"Public Key Algorithm",
+        "type":"LIST",
         "required":true,
         "readOnly":false,
         "editable":false,
@@ -2331,12 +2330,139 @@
         "multiValue":true,
         "description":"Select the hashing algorithm to check for compliance",
         "value":[
-          "SHA-1",
-          "SHA-224",
-          "SHA-256",
-          "SHA-384",
-          "SHA-512"
+          "RSA",
+          "DSA",
+          "ECDSA"
         ]
+      }
+    ]
+  },
+  {
+    "name":"cus_hashing_algorithm",
+    "description":"Hashing algorithm of the certificate",
+    "uuid":"b44d3ba2-e65a-11ec-8fea-0242ac120002",
+    "kind":"x509",
+    "attributes":[
+      {
+        "name":"condition",
+        "uuid":"b44d3f44-e65a-11ec-8fea-0242ac120002",
+        "label":"Condition",
+        "type":"LIST",
+        "required":true,
+        "readOnly":false,
+        "editable":false,
+        "visible":true,
+        "multiValue":false,
+        "description":"Select the condition to apply",
+        "value":[
+          "Equals",
+          "NotEquals"
+        ]
+      },
+      {
+        "name":"algorithm",
+        "uuid":"b44d408e-e65a-11ec-8fea-0242ac120002",
+        "label":"Hashing Algorithm",
+        "type":"LIST",
+        "required":true,
+        "readOnly":false,
+        "editable":false,
+        "visible":true,
+        "multiValue":true,
+        "description":"Select the hashing algorithm to check for compliance",
+        "value":[
+          "MD5-RSA",
+          "SHA1-RSA",
+          "SHA224-RSA",
+          "SHA256-RSA",
+          "SHA384-RSA",
+          "SHA512-RSA",
+          "ECDSA-SHA1",
+          "ECDSA-SHA224",
+          "ECDSA-SHA256",
+          "ECDSA-SHA384",
+          "ECDSA-SHA512"
+        ]
+      }
+    ]
+  },
+  {
+    "name":"cus_elliptic_curve",
+    "description":"Elliptic Curve of the certificate created with EC key",
+    "uuid":"5f6baae8-e663-11ec-8fea-0242ac120002",
+    "kind":"x509",
+    "attributes":[
+      {
+        "name":"condition",
+        "uuid":"5f6bad5e-e663-11ec-8fea-0242ac120002",
+        "label":"Condition",
+        "type":"LIST",
+        "required":true,
+        "readOnly":false,
+        "editable":false,
+        "visible":true,
+        "multiValue":false,
+        "description":"Select the condition to apply",
+        "value":[
+          "Equals",
+          "NotEquals"
+        ]
+      },
+      {
+        "name":"curve",
+        "uuid":"5f6bb196-e663-11ec-8fea-0242ac120002",
+        "label":"Curve",
+        "type":"LIST",
+        "required":true,
+        "readOnly":false,
+        "editable":false,
+        "visible":true,
+        "multiValue":true,
+        "description":"Select the Curve to check for compliance",
+        "value":[
+          "P-224",
+          "P-256",
+          "P-384",
+          "P-521"
+        ]
+      }
+    ]
+  },
+  {
+    "name":"cus_key_length",
+    "description":"Public Key length of the certificate should be",
+    "uuid":"7ed00480-e706-11ec-8fea-0242ac120002",
+    "kind":"x509",
+    "attributes":[
+      {
+        "name":"condition",
+        "uuid":"7ed00782-e706-11ec-8fea-0242ac120002",
+        "label":"Condition",
+        "type":"LIST",
+        "required":true,
+        "readOnly":false,
+        "editable":false,
+        "visible":true,
+        "multiValue":false,
+        "description":"Select the condition to apply",
+        "value":[
+          "Equals",
+          "NotEquals",
+          "Greater",
+          "Lesser"
+        ]
+      },
+      {
+        "name":"length",
+        "uuid":"7ed00886-e706-11ec-8fea-0242ac120002",
+        "label":"Key Length",
+        "type":"NUMBER",
+        "required":true,
+        "readOnly":false,
+        "editable":false,
+        "visible":true,
+        "multiValue":true,
+        "description":"Enter the key size of the certificate to be checked"
       }
     ]
   }

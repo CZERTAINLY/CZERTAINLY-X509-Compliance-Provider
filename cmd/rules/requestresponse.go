@@ -42,7 +42,6 @@ type (
 		Attributes      []attributes.Attributes `json:"attributes,omitempty"`
 		GroupUUID       string                  `json:"groupUuid"`
 		Kind            string                  `json:"kind"`
-		Custom          bool                    `json:"custom,omitempty"`
 	}
 
 	GroupDefinition struct {

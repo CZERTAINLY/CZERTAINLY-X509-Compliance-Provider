@@ -18,15 +18,16 @@ func NewService(logger log.Logger) Service {
 	}
 }
 
-func (s service) GetInfo(ctx context.Context, router *mux.Router) (Response, error) {
+func (s service) GetInfo(ctx context.Context, router *mux.Router) ([]Response, error) {
 	//logger := log.With(s.logger, "method", "GetInfo")
 	endpoints = endpoints[:0]
 	router.Walk(gorillaWalkFn)
-	infoResponse := Response{
+	var infoResponse []Response
+	infoResponse = append(infoResponse, Response{
 		FunctionGroupCode: "complianceProvider",
 		Kinds:             []string{"x509"},
 		EndPoints:         endpoints,
-	}
+	})
 	return infoResponse, nil
 }
 

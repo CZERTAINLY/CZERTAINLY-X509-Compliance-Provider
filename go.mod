@@ -5,6 +5,7 @@ go 1.18
 require (
 	github.com/go-kit/kit v0.12.0
 	github.com/gorilla/mux v1.8.0
+	github.com/keybase/go-crypto v0.0.0-20200123153347-de78d2cb44f4
 	github.com/zmap/zcrypto v0.0.0-20220525011035-18446b77d06c
 	github.com/zmap/zlint/v3 v3.3.1
 )
