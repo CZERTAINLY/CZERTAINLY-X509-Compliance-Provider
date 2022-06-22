@@ -10,9 +10,9 @@ import (
 type RuleStatus string
 
 const (
-	COMPLIANT      RuleStatus = "compliant"
-	NON_COMPLIANT  RuleStatus = "nonCompliant"
-	NOT_APPLICABLE RuleStatus = "notApplicable"
+	OK  RuleStatus = "ok"
+	NOK RuleStatus = "nok"
+	NA  RuleStatus = "na"
 )
 
 type (
@@ -31,6 +31,7 @@ type (
 		Name            string                  `json:"name"`
 		CertificateType string                  `json:"certificateType"`
 		Description     string                  `json:"description,omitempty"`
+		GroupUuid       string                  `json:"groupUuid,omitempty"`
 		Attributes      []attributes.Attributes `json:"attributes,omitempty"`
 	}
 

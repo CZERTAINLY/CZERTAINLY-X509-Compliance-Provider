@@ -8,8 +8,9 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"github.com/go-kit/kit/log"
 	"github.com/gorilla/mux"
+	"go.uber.org/zap"
+	"go.uber.org/zap/zapcore"
 	"net/http"
 	"os"
 	"os/signal"
@@ -20,22 +21,19 @@ var CompositeRouter = mux.NewRouter()
 
 func main() {
 	var httpAddr = flag.String("http", ":10180", "http listen address")
-	var logger log.Logger
-	{
-		logger = log.NewLogfmtLogger(os.Stderr)
-		logger = log.NewSyncLogger(logger)
-		logger = log.With(logger,
-			"service", "account",
-			"time:", log.DefaultTimestampUTC,
-			"caller", log.DefaultCaller,
-		)
-	}
+	var cfg zap.Config = zap.NewProductionConfig()
+	cfg.EncoderConfig.EncodeTime = zapcore.RFC3339TimeEncoder
+
+	logger, _ := cfg.Build()
+	logger.WithOptions()
+	defer logger.Sync()
+	sugar := logger.Sugar()
 
 	flag.Parse()
 	ctx := context.Background()
 	errs := make(chan error)
 
-	infoSrv, complianceSrv, rulesSrv := createService(logger)
+	infoSrv, complianceSrv, rulesSrv := createService(sugar)
 	infoEndpoints, complianceEndpoints, rulesEndpoints := createEndPoints(infoSrv, complianceSrv, rulesSrv)
 
 	go func() {
@@ -52,7 +50,7 @@ func main() {
 	fmt.Print(<-errs)
 }
 
-func createService(logger log.Logger) (info.Service, compliance.Service, rules.Service) {
+func createService(logger *zap.SugaredLogger) (info.Service, compliance.Service, rules.Service) {
 	var infoSrv info.Service
 	{
 		infoSrv = info.NewService(logger)

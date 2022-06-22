@@ -18,7 +18,7 @@ func MakeEndpoints(s Service) EndPoints {
 func makeComplianceCheckEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (interface{}, error) {
 		req := request.(RequestAndKind)
-		response, err := s.ComplianceCheck(ctx, req.Kind, req.Request)
+		response, err := s.ComplianceCheck(req.Kind, req.Request)
 		return response, err
 	}
 }

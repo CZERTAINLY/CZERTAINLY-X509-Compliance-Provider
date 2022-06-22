@@ -12,9 +12,9 @@ func ReturnRuleFramer(uuid string, name string, status rules.RuleStatus) (respon
 
 func boolToRuleStatusMapper(boolData bool) (status rules.RuleStatus) {
 	if boolData {
-		return rules.COMPLIANT
+		return rules.OK
 	}
-	return rules.NON_COMPLIANT
+	return rules.NOK
 }
 
 func HashingAlgorithmValidation(certificate *x509.Certificate, requestRule RequestRules, request Request, ruleDefinition rules.RuleDefinition) ResponseRules {
@@ -31,7 +31,7 @@ func HashingAlgorithmValidation(certificate *x509.Certificate, requestRule Reque
 		return ReturnRuleFramer(ruleDefinition.UUID, ruleDefinition.Name, boolToRuleStatusMapper(!isAlgorithmAvailable))
 	}
 
-	return ResponseRules{UUID: ruleDefinition.UUID, Name: ruleDefinition.Name, Status: rules.NOT_APPLICABLE}
+	return ResponseRules{UUID: ruleDefinition.UUID, Name: ruleDefinition.Name, Status: rules.NA}
 }
 
 func PublicKeyAlgorithmValidation(certificate *x509.Certificate, requestRule RequestRules, request Request, ruleDefinition rules.RuleDefinition) ResponseRules {
@@ -45,7 +45,7 @@ func PublicKeyAlgorithmValidation(certificate *x509.Certificate, requestRule Req
 	case "NotEquals":
 		return ReturnRuleFramer(ruleDefinition.UUID, ruleDefinition.Name, boolToRuleStatusMapper(!isAlgorithmAvailable))
 	}
-	return ResponseRules{UUID: ruleDefinition.UUID, Name: ruleDefinition.Name, Status: rules.NOT_APPLICABLE}
+	return ResponseRules{UUID: ruleDefinition.UUID, Name: ruleDefinition.Name, Status: rules.NA}
 }
 
 func EcCurveValidation(certificate *x509.Certificate, requestRule RequestRules, request Request, ruleDefinition rules.RuleDefinition) ResponseRules {
@@ -59,7 +59,7 @@ func EcCurveValidation(certificate *x509.Certificate, requestRule RequestRules, 
 	case "NotEquals":
 		return ReturnRuleFramer(ruleDefinition.UUID, ruleDefinition.Name, boolToRuleStatusMapper(!isValid))
 	}
-	return ResponseRules{UUID: ruleDefinition.UUID, Name: ruleDefinition.Name, Status: rules.NOT_APPLICABLE}
+	return ResponseRules{UUID: ruleDefinition.UUID, Name: ruleDefinition.Name, Status: rules.NA}
 }
 
 func KeySizeValidator(certificate *x509.Certificate, requestRule RequestRules, request Request, ruleDefinition rules.RuleDefinition) ResponseRules {
@@ -77,5 +77,5 @@ func KeySizeValidator(certificate *x509.Certificate, requestRule RequestRules, r
 	case "Lesser":
 		return ReturnRuleFramer(ruleDefinition.UUID, ruleDefinition.Name, boolToRuleStatusMapper(keySize <= value))
 	}
-	return ResponseRules{UUID: ruleDefinition.UUID, Name: ruleDefinition.Name, Status: rules.NOT_APPLICABLE}
+	return ResponseRules{UUID: ruleDefinition.UUID, Name: ruleDefinition.Name, Status: rules.NA}
 }

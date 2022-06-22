@@ -22,7 +22,7 @@ func MakeEndpoints(s Service) EndPoints {
 func makeGetRulesEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (interface{}, error) {
 		req := request.(Request)
-		response, err := s.GetRules(ctx, req.Kind, req.CertificateType)
+		response, err := s.GetRules(req.Kind, req.CertificateType)
 		return response, err
 	}
 }
@@ -30,7 +30,7 @@ func makeGetRulesEndpoint(s Service) endpoint.Endpoint {
 func makeGetGroupsEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (interface{}, error) {
 		req := request.(Request)
-		response, err := s.GetGroups(ctx, req.Kind)
+		response, err := s.GetGroups(req.Kind)
 		return response, err
 	}
 }
@@ -38,7 +38,7 @@ func makeGetGroupsEndpoint(s Service) endpoint.Endpoint {
 func makeGetGroupDetailsEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (interface{}, error) {
 		req := request.(GroupRequest)
-		response, err := s.GetGroupDetails(ctx, req.UUID, req.Kind)
+		response, err := s.GetGroupDetails(req.UUID, req.Kind)
 		return response, err
 	}
 }

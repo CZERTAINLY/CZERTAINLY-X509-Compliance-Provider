@@ -18,7 +18,7 @@ func MakeEndpoints(s Service, router *mux.Router) EndPoints {
 
 func makeGetInfoEndpoint(s Service, router *mux.Router) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (interface{}, error) {
-		infoResponse, err := s.GetInfo(ctx, router)
+		infoResponse, err := s.GetInfo(router)
 		return infoResponse, err
 	}
 }

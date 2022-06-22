@@ -12,9 +12,9 @@ import (
 type Status string
 
 const (
-	COMPLIANT     Status = "compliant"
-	NON_COMPLIANT Status = "nonCompliant"
-	NOT_CHECKED   Status = "notChecked"
+	OK  Status = "ok"
+	NOK Status = "nok"
+	NA  Status = "na"
 )
 
 type (

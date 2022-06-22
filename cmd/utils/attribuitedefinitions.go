@@ -8,7 +8,7 @@ func GetAttributeValue(attributeName string, attributes []attributes.Attributes)
 	}
 	for _, attribute := range attributes {
 		if attribute.Name == attributeName {
-			return attribute.Value
+			return attribute.Content
 		}
 	}
 	return nil
