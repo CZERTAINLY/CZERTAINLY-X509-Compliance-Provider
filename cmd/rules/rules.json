@@ -1,0 +1,2822 @@
+[
+  {
+    "name":"e_algorithm_identifier_improper_encoding",
+    "description":"Encoded AlgorithmObjectIdentifier objects inside a SubjectPublicKeyInfo field MUST comply with specified byte sequences.",
+    "citation":"BRs: 7.1.3.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084cc-ddc1-11ec-9d7f-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_basic_constraints_not_critical",
+    "description":"basicConstraints MUST appear as a critical extension",
+    "citation":"RFC 5280: 4.2.1.9",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084cd-ddc1-11ec-82b0-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_br_prohibit_dsa_usage",
+    "description":"DSA was removed from the Baseline Requirements as a valid signature algorithm in 1.7.1.",
+    "citation":"BRs: v1.7.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084ce-ddc1-11ec-a645-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ca_common_name_missing",
+    "description":"CA Certificates common name MUST be included.",
+    "citation":"BRs: 7.1.4.3.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084cf-ddc1-11ec-b4e7-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ca_country_name_invalid",
+    "description":"Root and Subordinate CA certificates MUST have a two-letter country code specified in ISO 3166-1",
+    "citation":"BRs: 7.1.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084d0-ddc1-11ec-b971-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ca_country_name_missing",
+    "description":"Root and Subordinate CA certificates MUST have a countryName present in subject information",
+    "citation":"BRs: 7.1.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084d1-ddc1-11ec-97de-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ca_crl_sign_not_set",
+    "description":"Root and Subordinate CA certificate keyUsage extension's crlSign bit MUST be set",
+    "citation":"BRs: 7.1.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084d2-ddc1-11ec-b959-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ca_is_ca",
+    "description":"Root and Sub CA Certificate: The CA field MUST be set to true.",
+    "citation":"BRs: 7.1.2.1, BRs: 7.1.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084d3-ddc1-11ec-8c9a-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ca_key_cert_sign_not_set",
+    "description":"Root CA Certificate: Bit positions for keyCertSign and cRLSign MUST be set.",
+    "citation":"BRs: 7.1.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084d4-ddc1-11ec-95d4-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ca_key_usage_missing",
+    "description":"Root and Subordinate CA certificate keyUsage extension MUST be present",
+    "citation":"BRs: 7.1.2.1, RFC 5280: 4.2.1.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084d5-ddc1-11ec-8e3c-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ca_key_usage_not_critical",
+    "description":"Root and Subordinate CA certificate keyUsage extension MUST be marked as critical",
+    "citation":"BRs: 7.1.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084d6-ddc1-11ec-9b8c-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ca_organization_name_missing",
+    "description":"Root and Subordinate CA certificates MUST have a organizationName present in subject information",
+    "citation":"BRs: 7.1.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084d7-ddc1-11ec-abc2-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ca_subject_field_empty",
+    "description":"CA Certificates subject field MUST not be empty and MUST have a non-empty distinguished name",
+    "citation":"RFC 5280: 4.1.2.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084d8-ddc1-11ec-a8de-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_cab_dv_conflicts_with_locality",
+    "description":"If certificate policy 2.23.140.1.2.1 (CA/B BR domain validated) is included, locality name MUST NOT be included in subject",
+    "citation":"BRs: 7.1.6.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084d9-ddc1-11ec-a971-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_cab_dv_conflicts_with_org",
+    "description":"If certificate policy 2.23.140.1.2.1 (CA/B BR domain validated) is included, organization name MUST NOT be included in subject",
+    "citation":"BRs: 7.1.6.4",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084da-ddc1-11ec-8877-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_cab_dv_conflicts_with_postal",
+    "description":"If certificate policy 2.23.140.1.2.1 (CA/B BR domain validated) is included, postalCode MUST NOT be included in subject",
+    "citation":"BRs: 7.1.6.4",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084db-ddc1-11ec-8f46-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_cab_dv_conflicts_with_province",
+    "description":"If certificate policy 2.23.140.1.2.1 (CA/B BR domain validated) is included, stateOrProvinceName MUST NOT be included in subject",
+    "citation":"BRs: 7.1.6.4",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084dc-ddc1-11ec-b6ee-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_cab_dv_conflicts_with_street",
+    "description":"If certificate policy 2.23.140.1.2.1 (CA/B BR domain validated) is included, streetAddress MUST NOT be included in subject",
+    "citation":"BRs: 7.1.6.4",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084dd-ddc1-11ec-b000-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_cab_iv_requires_personal_name",
+    "description":"If certificate policy 2.23.140.1.2.3 is included, either organizationName or givenName and surname MUST be included in subject",
+    "citation":"BRs: 7.1.6.4",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084de-ddc1-11ec-9abb-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_cab_ov_requires_org",
+    "description":"If certificate policy 2.23.140.1.2.2 is included, organizationName MUST be included in subject",
+    "citation":"BRs: 7.1.6.4",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084df-ddc1-11ec-9f27-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_cert_contains_unique_identifier",
+    "description":"CAs MUST NOT generate certificate with unique identifiers",
+    "citation":"RFC 5280: 4.1.2.8",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084e0-ddc1-11ec-8820-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_cert_extensions_version_not_3",
+    "description":"The extensions field MUST only appear in version 3 certificates",
+    "citation":"RFC 5280: 4.1.2.9",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084e1-ddc1-11ec-addf-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_cert_policy_iv_requires_country",
+    "description":"If certificate policy 2.23.140.1.2.3 is included, countryName MUST be included in subject",
+    "citation":"BRs: 7.1.6.4",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084e2-ddc1-11ec-bd5f-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_cert_policy_iv_requires_province_or_locality",
+    "description":"If certificate policy 2.23.140.1.2.3 is included, localityName or stateOrProvinceName MUST be included in subject",
+    "citation":"BRs: 7.1.6.4",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084e3-ddc1-11ec-86a9-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_cert_policy_ov_requires_country",
+    "description":"If certificate policy 2.23.140.1.2.2 is included, countryName MUST be included in subject",
+    "citation":"BRs: 7.1.6.4",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084e4-ddc1-11ec-aec4-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_cert_policy_ov_requires_province_or_locality",
+    "description":"If certificate policy 2.23.140.1.2.2 is included, localityName or stateOrProvinceName MUST be included in subject",
+    "citation":"BRs: 7.1.6.4",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084e5-ddc1-11ec-a521-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_cert_sig_alg_not_match_tbs_sig_alg",
+    "description":"Certificate signature field must match TBSCertificate signature field",
+    "citation":"RFC 5280, Section 4.1.1.2",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084e6-ddc1-11ec-881f-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_cert_unique_identifier_version_not_2_or_3",
+    "description":"Unique identifiers MUST only appear if the X.509 version is 2 or 3",
+    "citation":"RFC 5280: 4.1.2.8",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084e7-ddc1-11ec-aabc-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_distribution_point_incomplete",
+    "description":"A DistributionPoint from the CRLDistributionPoints extension MUST NOT consist of only the reasons field; either distributionPoint or CRLIssuer must be present",
+    "citation":"RFC 5280: 4.2.1.13",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084e8-ddc1-11ec-aa51-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_dnsname_bad_character_in_label",
+    "description":"Characters in labels of DNSNames MUST be alphanumeric, - , _ or *",
+    "citation":"BRs: 7.1.4.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084e9-ddc1-11ec-ab95-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_dnsname_contains_bare_iana_suffix",
+    "description":"DNSNames should not contain a bare IANA suffix.",
+    "citation":"BRs: 1.6.1, Base Domain Name",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084ea-ddc1-11ec-a9ac-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_dnsname_contains_prohibited_reserved_label",
+    "description":"FQDNs MUST consist solely of Domain Labels that are P‐Labels or Non‐Reserved LDH Labels",
+    "citation":"BRs: 7.1.4.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084eb-ddc1-11ec-ab2f-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_dnsname_empty_label",
+    "description":"DNSNames should not have an empty label.",
+    "citation":"BRs: 7.1.4.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084ec-ddc1-11ec-bd4d-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_dnsname_hyphen_in_sld",
+    "description":"DNSName should not have a hyphen beginning or ending the SLD",
+    "citation":"BRs 7.1.4.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084ed-ddc1-11ec-861d-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_dnsname_label_too_long",
+    "description":"DNSName labels MUST be less than or equal to 63 characters",
+    "citation":"RFC 1035",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084ee-ddc1-11ec-97a0-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_dnsname_left_label_wildcard_correct",
+    "description":"Wildcards in the left label of DNSName should only be *",
+    "citation":"BRs: 1.6.1, Wildcard Certificate and Wildcard Domain Name",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084ef-ddc1-11ec-93d2-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_dnsname_not_valid_tld",
+    "description":"DNSNames must have a valid TLD.",
+    "citation":"BRs: 3.2.2.4",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084f0-ddc1-11ec-ac10-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_dnsname_underscore_in_sld",
+    "description":"DNSName MUST NOT contain underscore characters",
+    "citation":"BRs: 7.1.4.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084f1-ddc1-11ec-88f4-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_dnsname_wildcard_only_in_left_label",
+    "description":"DNSName should not have wildcards except in the left-most label",
+    "citation":"BRs: 1.6.1, Wildcard Domain Name",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084f2-ddc1-11ec-97b4-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_dsa_correct_order_in_subgroup",
+    "description":"DSA: Public key value has the unique correct representation in the field, and that the key has the correct order in the subgroup",
+    "citation":"BRs v1.7.0: 6.1.6",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084f3-ddc1-11ec-af75-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_dsa_improper_modulus_or_divisor_size",
+    "description":"Certificates MUST meet the following requirements for DSA algorithm type and key size: L=2048 and N=224,256 or L=3072 and N=256",
+    "citation":"BRs v1.7.0: 6.1.5",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084f4-ddc1-11ec-b673-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_dsa_params_missing",
+    "description":"DSA: Certificates MUST include all domain parameters",
+    "citation":"BRs v1.7.0: 6.1.6",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084f5-ddc1-11ec-b2ab-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_dsa_shorter_than_2048_bits",
+    "description":"DSA modulus size must be at least 2048 bits",
+    "citation":"BRs v1.7.0: 6.1.5",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084f6-ddc1-11ec-9703-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_dsa_unique_correct_representation",
+    "description":"DSA: Public key value has the unique correct representation in the field, and that the key has the correct order in the subgroup",
+    "citation":"BRs v1.7.0: 6.1.6",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084f7-ddc1-11ec-836f-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ec_improper_curves",
+    "description":"Only one of NIST P‐256, P‐384, or P‐521 can be used",
+    "citation":"BRs: 6.1.5",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084f8-ddc1-11ec-a755-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ev_business_category_missing",
+    "description":"EV certificates must include businessCategory in subject",
+    "citation":"EVGs: 9.2.3",
+    "groupUuid":"52351170-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084f9-ddc1-11ec-b15d-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ev_country_name_missing",
+    "description":"EV certificates must include countryName in subject",
+    "citation":"EVGs: 9.2.4",
+    "groupUuid":"52351170-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084fa-ddc1-11ec-977d-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ev_not_wildcard",
+    "description":"Wildcard certificates are not allowed for EV Certificates except for those with .onion as the TLD.",
+    "citation":"CABF EV Guidelines 1.7.8 Section 9.8.1",
+    "groupUuid":"52351170-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084fb-ddc1-11ec-8970-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ev_organization_id_missing",
+    "description":"Effective January 31, 2020, if the subject:organizationIdentifier field is present, this [cabfOrganizationIdentifier] field MUST be present.",
+    "citation":"CA/Browser Forum EV Guidelines v1.7.0, Sec. 9.8.2",
+    "groupUuid":"52351170-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084fc-ddc1-11ec-b1b8-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ev_organization_name_missing",
+    "description":"EV certificates must include organizationName in subject",
+    "citation":"EVGs: 9.2.1",
+    "groupUuid":"52351170-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084fd-ddc1-11ec-a1e8-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ev_san_ip_address_present",
+    "description":"The Subject Alternate Name extension MUST contain only 'dnsName' name types.",
+    "citation":"CABF EV Guidelines 1.7.8 Section 9.8.1",
+    "groupUuid":"52351170-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084fe-ddc1-11ec-9615-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ev_serial_number_missing",
+    "description":"EV certificates must include serialNumber in subject",
+    "citation":"EVGs: 9.2.6",
+    "groupUuid":"52351170-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f084ff-ddc1-11ec-886f-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ev_valid_time_too_long",
+    "description":"EV certificates must be 27 months in validity or less",
+    "citation":"EVGs 1.0: 8(a), EVGs 1.6.1: 9.4",
+    "groupUuid":"52351170-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08500-ddc1-11ec-8017-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_aia_marked_critical",
+    "description":"Conforming CAs must mark the Authority Information Access extension as non-critical",
+    "citation":"RFC 5280: 4.2.2.1",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08501-ddc1-11ec-a24e-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_authority_key_identifier_critical",
+    "description":"The authority key identifier extension must be non-critical",
+    "citation":"RFC 5280: 4.2.1.1",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08502-ddc1-11ec-8aa3-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_authority_key_identifier_missing",
+    "description":"CAs must support key identifiers and include them in all certificates",
+    "citation":"RFC 5280: 4.2 & 4.2.1.1",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08503-ddc1-11ec-92bf-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_authority_key_identifier_no_key_identifier",
+    "description":"CAs must include keyIdentifer field of AKI in all non-self-issued certificates",
+    "citation":"RFC 5280: 4.2.1.1",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08504-ddc1-11ec-bb57-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_cert_policy_disallowed_any_policy_qualifier",
+    "description":"When qualifiers are used with the special policy anyPolicy, they must be limited to qualifiers identified in this section: (4.2.1.4)",
+    "citation":"RFC 5280: 4.2.1.4",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08505-ddc1-11ec-85ef-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_cert_policy_duplicate",
+    "description":"A certificate policy OID must not appear more than once in the extension",
+    "citation":"RFC 5280: 4.2.1.4",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08506-ddc1-11ec-986b-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_cert_policy_explicit_text_ia5_string",
+    "description":"Compliant certificates must not encode explicitTest as an IA5String",
+    "citation":"RFC 6818: 3",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08507-ddc1-11ec-b7da-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_cert_policy_explicit_text_too_long",
+    "description":"Explicit text has a maximum size of 200 characters",
+    "citation":"RFC 6818: 3",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08508-ddc1-11ec-b7bb-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_duplicate_extension",
+    "description":"A certificate MUST NOT include more than one instance of a particular extension",
+    "citation":"RFC 5280: 4.2",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08509-ddc1-11ec-93f0-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_freshest_crl_marked_critical",
+    "description":"Freshest CRL MUST be marked as non-critical by conforming CAs",
+    "citation":"RFC 5280: 4.2.1.15",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0850a-ddc1-11ec-9443-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_ian_dns_not_ia5_string",
+    "description":"DNSNames MUST be IA5 strings",
+    "citation":"RFC 5280: 4.2.1.7",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0850b-ddc1-11ec-bb8a-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_ian_empty_name",
+    "description":"General name fields must not be empty in IAN",
+    "citation":"RFC 5280: 4.2.1.7",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0850c-ddc1-11ec-9af3-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_ian_no_entries",
+    "description":"If present, the IAN extension must contain at least one entry",
+    "citation":"RFC 5280: 4.2.1.7",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0850d-ddc1-11ec-93a4-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_ian_rfc822_format_invalid",
+    "description":"Email must not be surrounded with `<>`, and there MUST NOT be trailing comments in `()`",
+    "citation":"RFC 5280: 4.2.1.7",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0850e-ddc1-11ec-87d3-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_ian_space_dns_name",
+    "description":"dNSName ' ' MUST NOT be used",
+    "citation":"RFC 5280: 4.2.1.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0850f-ddc1-11ec-bdd5-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_ian_uri_format_invalid",
+    "description":"URIs in the subjectAltName extension MUST have a scheme and scheme specific part",
+    "citation":"RFC5280: 4.2.1.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08510-ddc1-11ec-bc5e-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_ian_uri_host_not_fqdn_or_ip",
+    "description":"URIs that include an authority ([RFC3986], Section 3.2) MUST include a fully qualified domain name or IP address as the host",
+    "citation":"RFC 5280: 4.2.1.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08511-ddc1-11ec-aef8-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_ian_uri_not_ia5",
+    "description":"When issuer alternative name contains a URI, the name MUST be an IA5 string",
+    "citation":"RFC5280: 4.2.1.7",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08512-ddc1-11ec-ae2a-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_ian_uri_relative",
+    "description":"When issuerAltName extension is present and the URI is used, the name MUST NOT be a relative URI",
+    "citation":"RFC 5280: 4.2.1.7",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08513-ddc1-11ec-9fd9-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_key_usage_cert_sign_without_ca",
+    "description":"if the keyCertSign bit is asserted, then the cA bit in the basic constraints extension MUST also be asserted",
+    "citation":"RFC 5280: 4.2.1.3 & 4.2.1.9",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08514-ddc1-11ec-b80e-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_key_usage_without_bits",
+    "description":"When the keyUsage extension is included, at least one bit MUST be set to 1",
+    "citation":"RFC 5280: 4.2.1.3",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08515-ddc1-11ec-acd9-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_name_constraints_not_critical",
+    "description":"If it is included, conforming CAs MUST mark the name constraints extension as critical",
+    "citation":"RFC 5280: 4.2.1.10",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08516-ddc1-11ec-b629-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_name_constraints_not_in_ca",
+    "description":"The name constraints extension MUST only be used in CA certificates",
+    "citation":"RFC 5280: 4.2.1.10",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08517-ddc1-11ec-9923-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_nc_intersects_reserved_ip",
+    "description":"iPAddress name constraint intersects an IANA reserved network",
+    "citation":"BRs: 7.1.5 / 7.1.4.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08518-ddc1-11ec-94cc-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_policy_constraints_empty",
+    "description":"Conforming CAs MUST NOT issue certificates where policy constraints is an empty sequence. That is, either the inhibitPolicyMapping field or the requireExplicityPolicy field MUST be present",
+    "citation":"RFC 5280: 4.2.1.11",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08519-ddc1-11ec-9285-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_policy_constraints_not_critical",
+    "description":"Conforming CAs MUST mark the policy constraints extension as critical",
+    "citation":"RFC 5280: 4.2.1.11",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0851a-ddc1-11ec-a331-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_policy_map_any_policy",
+    "description":"Policies must not be mapped to or from the anyPolicy value",
+    "citation":"RFC 5280: 4.2.1.5",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0851b-ddc1-11ec-a455-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_contains_reserved_ip",
+    "description":"CAs SHALL NOT issue certificates with a subjectAltName extension or subject:commonName field containing a Reserved IP Address or Internal Name.",
+    "citation":"BRs: 7.1.4.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0851c-ddc1-11ec-a851-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_directory_name_present",
+    "description":"The Subject Alternate Name extension MUST contain only 'dnsName' and 'ipaddress' name types",
+    "citation":"BRs: 7.1.4.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0851d-ddc1-11ec-8e77-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_dns_name_too_long",
+    "description":"DNSName must be less than or equal to 253 bytes",
+    "citation":"RFC 5280",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0851e-ddc1-11ec-b056-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_dns_not_ia5_string",
+    "description":"dNSNames MUST be IA5 strings",
+    "citation":"RFC 5280: 4.2.1.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0851f-ddc1-11ec-ae8a-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_edi_party_name_present",
+    "description":"The Subject Alternate Name extension MUST contain only 'dnsName' and 'ipaddress' name types",
+    "citation":"BRs: 7.1.4.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08520-ddc1-11ec-98b4-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_empty_name",
+    "description":"General name fields MUST NOT be empty in subjectAlternateNames",
+    "citation":"RFC 5280: 4.2.1.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08521-ddc1-11ec-a40b-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_missing",
+    "description":"Subscriber certificates MUST contain the Subject Alternate Name extension",
+    "citation":"BRs: 7.1.4.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08522-ddc1-11ec-8982-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_no_entries",
+    "description":"If present, the SAN extension MUST contain at least one entry",
+    "citation":"RFC 5280: 4.2.1.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08523-ddc1-11ec-b70f-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_not_critical_without_subject",
+    "description":"If there is an empty subject field, then the SAN extension MUST be critical",
+    "citation":"RFC 5280: 4.2.1.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08524-ddc1-11ec-bb2c-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_other_name_present",
+    "description":"The Subject Alternate Name extension MUST contain only 'dnsName' and 'ipaddress' name types.",
+    "citation":"BRs: 7.1.4.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08525-ddc1-11ec-95db-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_registered_id_present",
+    "description":"The Subject Alternate Name extension MUST contain only 'dnsName' and 'ipaddress' name types.",
+    "citation":"BRs: 7.1.4.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08526-ddc1-11ec-bab3-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_rfc822_format_invalid",
+    "description":"Email MUST NOT be surrounded with `<>`, and there must be no trailing comments in `()`",
+    "citation":"RFC 5280: 4.2.1.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08527-ddc1-11ec-b2f4-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_rfc822_name_present",
+    "description":"The Subject Alternate Name extension MUST contain only 'dnsName' and 'ipaddress' name types.",
+    "citation":"BRs: 7.1.4.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08528-ddc1-11ec-bf5f-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_space_dns_name",
+    "description":"The dNSName ` ` MUST NOT be used",
+    "citation":"RFC 5280: 4.2.1.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08529-ddc1-11ec-b880-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_uniform_resource_identifier_present",
+    "description":"The Subject Alternate Name extension MUST contain only 'dnsName' and 'ipaddress' name types",
+    "citation":"BRs: 7.1.4.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0852a-ddc1-11ec-98be-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_uri_format_invalid",
+    "description":"URIs in SAN extension must have a scheme and scheme specific part",
+    "citation":"RFC5280: 4.2.1.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0852b-ddc1-11ec-b3ff-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_uri_host_not_fqdn_or_ip",
+    "description":"URIs that include an authority ([RFC3986], Section 3.2) MUST include a fully qualified domain name or IP address as the host",
+    "citation":"RFC 5280: 4.2.1.7",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0852c-ddc1-11ec-8f29-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_uri_not_ia5",
+    "description":"When subjectAlternateName contains a URI, the name MUST be an IA5 string",
+    "citation":"RFC5280: 4.2.1.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0852d-ddc1-11ec-b155-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_san_uri_relative",
+    "description":"When the subjectAlternateName extension is present and a URI is used, the name MUST NOT be a relative URI",
+    "citation":"RFC 5280: 4.2.1.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0852e-ddc1-11ec-a087-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_subject_directory_attr_critical",
+    "description":"Conforming CAs MUST mark the Subject Directory Attributes extension as not critical",
+    "citation":"RFC 5280: 4.2.1.8",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0852f-ddc1-11ec-a4d6-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_subject_key_identifier_critical",
+    "description":"The subject key identifier extension MUST be non-critical",
+    "citation":"RFC 5280: 4.2.1.2",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08530-ddc1-11ec-b48e-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_subject_key_identifier_missing_ca",
+    "description":"CAs MUST include a Subject Key Identifier in all CA certificates",
+    "citation":"RFC 5280: 4.2 & 4.2.1.2",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08531-ddc1-11ec-a988-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ext_tor_service_descriptor_hash_invalid",
+    "description":"certificates with v2 .onion names need valid TorServiceDescriptors in extension",
+    "citation":"BRs: Ballot 201, Ballot SC27",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08532-ddc1-11ec-9472-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_generalized_time_does_not_include_seconds",
+    "description":"Generalized time values MUST include seconds",
+    "citation":"RFC 5280: 4.1.2.5.2",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08533-ddc1-11ec-8312-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_generalized_time_includes_fraction_seconds",
+    "description":"Generalized time values MUST NOT include fractional seconds",
+    "citation":"RFC 5280: 4.1.2.5.2",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08534-ddc1-11ec-ba0b-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_generalized_time_not_in_zulu",
+    "description":"Generalized time values MUST be expressed in Greenwich Mean Time (Zulu)",
+    "citation":"RFC 5280: 4.1.2.5.2",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08535-ddc1-11ec-a230-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ian_bare_wildcard",
+    "description":"A wildcard MUST be accompanied by other data to its right (Only checks IANDNSNames)",
+    "citation":"awslabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08536-ddc1-11ec-ba48-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ian_dns_name_includes_null_char",
+    "description":"DNSName MUST NOT include a null character",
+    "citation":"awslabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08537-ddc1-11ec-a762-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ian_dns_name_starts_with_period",
+    "description":"DNSName MUST NOT start with a period",
+    "citation":"awslabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08538-ddc1-11ec-bab6-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ian_wildcard_not_first",
+    "description":"A wildcard MUST be in the first label of FQDN (ie not: www.*.com) (Only checks IANDNSNames)",
+    "citation":"awslabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08539-ddc1-11ec-ad0e-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_inhibit_any_policy_not_critical",
+    "description":"CAs MUST mark the inhibitAnyPolicy extension as critical",
+    "citation":"RFC 5280: 4.2.1.14",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0853a-ddc1-11ec-8b28-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_international_dns_name_not_nfc",
+    "description":"Internationalized DNSNames must be normalized by Unicode normalization form C",
+    "citation":"RFC 8399",
+    "groupUuid":"e1d0af6e-ddb3-11ec-9d64-0242ac120002",
+    "uuid":"40f0853b-ddc1-11ec-9eb7-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_international_dns_name_not_unicode",
+    "description":"Internationalized DNSNames punycode not valid Unicode",
+    "citation":"RFC 3490",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0853c-ddc1-11ec-b077-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_invalid_certificate_version",
+    "description":"Certificates MUST be of type X.590 v3",
+    "citation":"BRs: 7.1.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0853d-ddc1-11ec-a0ff-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_issuer_dn_country_not_printable_string",
+    "description":"X520 Distinguished Name Country MUST BE encoded as PrintableString",
+    "citation":"RFC 5280: Appendix A",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0853e-ddc1-11ec-9218-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_issuer_field_empty",
+    "description":"Certificate issuer field MUST NOT be empty and must have a non-empty distinguished name",
+    "citation":"RFC 5280: 4.1.2.4",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0853f-ddc1-11ec-bd33-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_mp_authority_key_identifier_correct",
+    "description":"CAs MUST NOT issue certificates that have authority key IDs that include both the key ID and the issuer's issuer name and serial number",
+    "citation":"Mozilla Root Store Policy / Section 5.2",
+    "groupUuid":"52350df6-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08540-ddc1-11ec-8296-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_mp_ecdsa_pub_key_encoding_correct",
+    "description":"The encoded algorithm identifiers for ECDSA public keys MUST match specific bytes",
+    "citation":"Mozilla Root Store Policy / Section 5.1.2",
+    "groupUuid":"52350df6-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08541-ddc1-11ec-b603-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_mp_ecdsa_signature_encoding_correct",
+    "description":"The encoded algorithm identifiers for ECDSA signatures MUST match specific hex-encoded bytes",
+    "citation":"Mozilla Root Store Policy / Section 5.1.2",
+    "groupUuid":"52350df6-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08542-ddc1-11ec-8d12-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_mp_exponent_cannot_be_one",
+    "description":"CAs MUST NOT issue certificates that have invalid public keys (e.g., RSA certificates with public exponent equal to 1)",
+    "citation":"Mozilla Root Store Policy / Section 5.2",
+    "groupUuid":"52350df6-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08543-ddc1-11ec-9f62-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_mp_modulus_must_be_2048_bits_or_more",
+    "description":"RSA keys must have modulus size of at least 2048 bits",
+    "citation":"Mozilla Root Store Policy / Section 5.1",
+    "groupUuid":"52350df6-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08544-ddc1-11ec-9378-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_mp_modulus_must_be_divisible_by_8",
+    "description":"RSA keys must have a modulus size divisible by 8",
+    "citation":"Mozilla Root Store Policy / Section 5.1",
+    "groupUuid":"52350df6-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08545-ddc1-11ec-9ae8-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_mp_rsassa-pss_in_spki",
+    "description":"CAs MUST NOT use the id-RSASSA-PSS OID (1.2.840.113549.1.1.10) within a SubjectPublicKeyInfo to represent a RSA key.",
+    "citation":"Mozilla Root Store Policy / Section 5.1.1",
+    "groupUuid":"52350df6-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08546-ddc1-11ec-947b-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_mp_rsassa-pss_parameters_encoding_in_signature_algorithm_correct",
+    "description":"The encoded AlgorithmIdentifier for RSASSA-PSS in the signature algorithm MUST match specific bytes",
+    "citation":"Mozilla Root Store Policy / Section 5.1.1",
+    "groupUuid":"52350df6-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08547-ddc1-11ec-b5a6-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_name_constraint_empty",
+    "description":"Conforming CAs MUST NOT issue certificates where name constraints is an empty sequence. That is, either the permittedSubtree or excludedSubtree fields must be present",
+    "citation":"RFC 5280: 4.2.1.10",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08548-ddc1-11ec-95a4-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_name_constraint_maximum_not_absent",
+    "description":"Within the name constraints name form, the maximum field is not used and therefore MUST be absent",
+    "citation":"RFC 5280: 4.2.1.10",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08549-ddc1-11ec-8068-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_name_constraint_minimum_non_zero",
+    "description":"Within the name constraints name forms, the minimum field is not used and therefore MUST be zero",
+    "citation":"RFC 5280: 4.2.1.10",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0854a-ddc1-11ec-a800-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_name_constraint_not_fqdn",
+    "description":"For URIs, the constraint MUST be specified as a fully qualified domain name [...] When the constraint begins with a period, it MAY be expanded with one or more labels.",
+    "citation":"RFC 5280: 4.2.1.10",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0854b-ddc1-11ec-ad8d-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_no_underscores_before_1_6_2",
+    "description":"Before explicitly stating as such in CABF 1.6.2, the stance of RFC5280 is adopted that DNSNames MUST NOT contain an underscore character.",
+    "citation":"BR 7.1.4.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0854c-ddc1-11ec-aeab-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_ocsp_id_pkix_ocsp_nocheck_ext_not_included_server_auth",
+    "description":"OCSP signing Certificate MUST contain an extension of type id-pkixocsp-nocheck, as defined by RFC6960",
+    "citation":"BRs: 4.9.9",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0854d-ddc1-11ec-bb66-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_old_root_ca_rsa_mod_less_than_2048_bits",
+    "description":"In a validity period beginning on or before 31 Dec 2010, root CA certificates using RSA public key algorithm MUST use a 2048 bit modulus",
+    "citation":"BRs: 6.1.5",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0854e-ddc1-11ec-81a5-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_old_sub_ca_rsa_mod_less_than_1024_bits",
+    "description":"In a validity period beginning on or before 31 Dec 2010 and ending on or before 31 Dec 2013, subordinate CA certificates using RSA public key algorithm MUST use a 1024 bit modulus",
+    "citation":"BRs: 6.1.5",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0854f-ddc1-11ec-97a0-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_old_sub_cert_rsa_mod_less_than_1024_bits",
+    "description":"In a validity period ending on or before 31 Dec 2013, subscriber certificates using RSA public key algorithm MUST use a 1024 bit modulus",
+    "citation":"BRs: 6.1.5",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08550-ddc1-11ec-9b2a-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_onion_subject_validity_time_too_large",
+    "description":"certificates with .onion names can not be valid for more than 15 months",
+    "citation":"EVGs: Appendix F",
+    "groupUuid":"52351170-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08551-ddc1-11ec-9d0c-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_path_len_constraint_improperly_included",
+    "description":"CAs MUST NOT include the pathLenConstraint field unless the CA boolean is asserted and the keyCertSign bit is set",
+    "citation":"RFC 5280: 4.2.1.9",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08552-ddc1-11ec-8073-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_path_len_constraint_zero_or_less",
+    "description":"Where it appears, the pathLenConstraint field MUST be greater than or equal to zero",
+    "citation":"RFC 5280: 4.2.1.9",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08553-ddc1-11ec-9d25-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_prohibit_dsa_usage",
+    "description":"DSA is not an explicitly allowed signature algorithm, therefore it is forbidden.",
+    "citation":"Mozilla Root Store Policy / Section 5.1",
+    "groupUuid":"52350df6-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08554-ddc1-11ec-a3b5-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_public_key_type_not_allowed",
+    "description":"Certificates MUST have RSA, DSA, or ECDSA public key type",
+    "citation":"BRs: 6.1.5",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08555-ddc1-11ec-be67-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_qcstatem_etsi_present_qcs_critical",
+    "description":"Checks that a QC Statement which contains any of the id-etsi-qcs-... QC Statements is not marked critical",
+    "citation":"ETSI EN 319 412 - 5 V2.2.1 (2017 - 11) / Section 4.1",
+    "groupUuid":"52350f36-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08556-ddc1-11ec-b84a-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_qcstatem_etsi_type_as_statem",
+    "description":"Checks for erroneous QC Statement OID that actually are represented by ETSI ESI QC type OID.",
+    "citation":"ETSI EN 319 412 - 5 V2.2.1 (2017 - 11) / Section 4.2.3",
+    "groupUuid":"52350f36-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f08557-ddc1-11ec-b0d5-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_qcstatem_mandatory_etsi_statems",
+    "description":"Checks that a QC Statement that contains at least one of the ETSI ESI statements, also features the set of mandatory ETSI ESI QC statements.",
+    "citation":"ETSI EN 319 412 - 5 V2.2.1 (2017 - 11) / Section 5",
+    "groupUuid":"52350f36-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abc4-ddc1-11ec-b51c-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_qcstatem_qccompliance_valid",
+    "description":"Checks that a QC Statement of the type id-etsi-qcs-QcCompliance has the correct form",
+    "citation":"ETSI EN 319 412 - 5 V2.2.1 (2017 - 11) / Section 4.2.1",
+    "groupUuid":"52350f36-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abc5-ddc1-11ec-addb-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_qcstatem_qclimitvalue_valid",
+    "description":"Checks that a QC Statement of the type id-etsi-qcs-QcLimitValue has the correct form",
+    "citation":"ETSI EN 319 412 - 5 V2.2.1 (2017 - 11) / Section 4.3.2",
+    "groupUuid":"52350f36-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abc6-ddc1-11ec-a656-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_qcstatem_qcpds_valid",
+    "description":"Checks that a QC Statement of the type id-etsi-qcs-QcPDS has the correct form",
+    "citation":"ETSI EN 319 412 - 5 V2.2.1 (2017 - 11) / Section 4.3.4",
+    "groupUuid":"52350f36-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abc7-ddc1-11ec-a9bb-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_qcstatem_qcretentionperiod_valid",
+    "description":"Checks that a QC Statement of the type id-etsi-qcs-QcRetentionPeriod has the correct form",
+    "citation":"ETSI EN 319 412 - 5 V2.2.1 (2017 - 11)/ Section 4.3.3",
+    "groupUuid":"52350f36-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abc8-ddc1-11ec-9d2f-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_qcstatem_qcsscd_valid",
+    "description":"Checks that a QC Statement of the type id-etsi-qcs-QcSSCD has the correct form",
+    "citation":"ETSI EN 319 412 - 5 V2.2.1 (2017 - 11) / Section 4.2.2",
+    "groupUuid":"52350f36-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abc9-ddc1-11ec-8bc7-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_qcstatem_qctype_valid",
+    "description":"Checks that a QC Statement of the type Id-etsi-qcs-QcType features a non-empty list of only the allowed QcType OIDs",
+    "citation":"ETSI EN 319 412 - 5 V2.2.1 (2017 - 11) / Section 4.2.3",
+    "groupUuid":"52350f36-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abca-ddc1-11ec-837a-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_rfc_dnsname_empty_label",
+    "description":"DNSNames should not have an empty label.",
+    "citation":"RFC5280: 4.2.1.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abcb-ddc1-11ec-9591-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_rfc_dnsname_hyphen_in_sld",
+    "description":"DNSName should not have a hyphen beginning or ending the SLD",
+    "citation":"RFC5280: 4.2.1.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abcc-ddc1-11ec-b278-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_rfc_dnsname_label_too_long",
+    "description":"DNSName labels MUST be less than or equal to 63 characters",
+    "citation":"RFC 5280: 4.2.1.6, citing RFC 1035",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abcd-ddc1-11ec-9c07-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_rfc_dnsname_underscore_in_sld",
+    "description":"DNSName MUST NOT contain underscore characters",
+    "citation":"RFC5280: 4.2.1.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abce-ddc1-11ec-b2ad-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_root_ca_extended_key_usage_present",
+    "description":"Root CA Certificate: extendedKeyUsage MUST NOT be present.t",
+    "citation":"BRs: 7.1.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abcf-ddc1-11ec-a59c-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_root_ca_key_usage_must_be_critical",
+    "description":"Root CA certificates MUST have Key Usage Extension marked critical",
+    "citation":"BRs: 7.1.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abd0-ddc1-11ec-ac28-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_root_ca_key_usage_present",
+    "description":"Root CA certificates MUST have Key Usage Extension Present",
+    "citation":"BRs: 7.1.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abd1-ddc1-11ec-a609-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_rsa_exp_negative",
+    "description":"RSA public key exponent MUST be positive",
+    "citation":"awslabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abd2-ddc1-11ec-b050-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_rsa_mod_less_than_2048_bits",
+    "description":"For certificates valid after 31 Dec 2013, all certificates using RSA public key algorithm MUST have 2048 bits of modulus",
+    "citation":"BRs: 6.1.5",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abd3-ddc1-11ec-be6c-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_rsa_no_public_key",
+    "description":"The RSA public key should be present",
+    "citation":"awslabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abd4-ddc1-11ec-b827-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_rsa_public_exponent_not_odd",
+    "description":"RSA: Value of public exponent is an odd number equal to 3 or more.",
+    "citation":"BRs: 6.1.6",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abd5-ddc1-11ec-9c8a-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_rsa_public_exponent_too_small",
+    "description":"RSA: Value of public exponent is an odd number equal to 3 or more.",
+    "citation":"BRs: 6.1.6",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abd6-ddc1-11ec-815a-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_san_bare_wildcard",
+    "description":"A wildcard MUST be accompanied by other data to its right (Only checks DNSName)",
+    "citation":"awslabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abd7-ddc1-11ec-8103-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_san_dns_name_includes_null_char",
+    "description":"DNSName MUST NOT include a null character",
+    "citation":"awslabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abd8-ddc1-11ec-b744-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_san_dns_name_onion_invalid",
+    "description":"certificates with a .onion subject name must be issued in accordance with the Tor address/rendezvous specification",
+    "citation":"RFC 7686, EVGs v1.7.2: Appendix F, BRs v1.6.9: Appendix C",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abd9-ddc1-11ec-a0d0-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_san_dns_name_onion_not_ev_cert",
+    "description":"certificates with a .onion subject name must be issued in accordance with EV Guidelines",
+    "citation":"CABF Ballot 144",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abda-ddc1-11ec-880d-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_san_dns_name_starts_with_period",
+    "description":"DNSName MUST NOT start with a period",
+    "citation":"awslabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abdb-ddc1-11ec-8c54-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_san_wildcard_not_first",
+    "description":"A wildcard MUST be in the first label of FQDN (ie not: www.*.com) (Only checks DNSName)",
+    "citation":"awslabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abdc-ddc1-11ec-8065-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_serial_number_longer_than_20_octets",
+    "description":"Certificates must not have a DER encoded serial number longer than 20 octets",
+    "citation":"RFC 5280: 4.1.2.2",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abdd-ddc1-11ec-8a92-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_serial_number_not_positive",
+    "description":"Certificates must have a positive serial number",
+    "citation":"RFC 5280: 4.1.2.2",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abde-ddc1-11ec-99b2-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_signature_algorithm_not_supported",
+    "description":"Certificates MUST meet the following requirements for algorithm Source: SHA-1*, SHA-256, SHA-384, SHA-512",
+    "citation":"BRs: 6.1.5",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abdf-ddc1-11ec-9dd1-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_spki_rsa_encryption_parameter_not_null",
+    "description":"RSA: Encoded public key algorithm identifier MUST have NULL parameters",
+    "citation":"RFC 4055, Section 1.2",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abe0-ddc1-11ec-9f4c-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_ca_aia_marked_critical",
+    "description":"Subordinate CA Certificate: authorityInformationAccess MUST NOT be marked critical",
+    "citation":"BRs: 7.1.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abe1-ddc1-11ec-a4fd-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_ca_aia_missing",
+    "description":"Subordinate CA Certificate: authorityInformationAccess MUST be present, with the exception of stapling.",
+    "citation":"BRs: 7.1.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abe2-ddc1-11ec-89b8-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_ca_certificate_policies_missing",
+    "description":"Subordinate CA certificates must have a certificatePolicies extension",
+    "citation":"BRs: 7.1.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abe3-ddc1-11ec-a60f-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_ca_crl_distribution_points_does_not_contain_url",
+    "description":"Subordinate CA Certificate: cRLDistributionPoints MUST contain the HTTP URL of the CA's CRL service.",
+    "citation":"BRs: 7.1.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abe4-ddc1-11ec-ba9c-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_ca_crl_distribution_points_marked_critical",
+    "description":"Subordinate CA Certificate: cRLDistributionPoints MUST be present and MUST NOT be marked critical.",
+    "citation":"BRs: 7.1.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abe5-ddc1-11ec-b88d-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_ca_crl_distribution_points_missing",
+    "description":"Subordinate CA Certificate: cRLDistributionPoints MUST be present and MUST NOT be marked critical.",
+    "citation":"BRs: 7.1.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abe6-ddc1-11ec-912e-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_aia_does_not_contain_ocsp_url",
+    "description":"Subscriber Certificate: authorityInformationAccess MUST contain the HTTP URL of the Issuing CA's OSCP responder.",
+    "citation":"BRs: 7.1.2.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abe7-ddc1-11ec-b86f-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_aia_marked_critical",
+    "description":"Subscriber Certificate: authorityInformationAccess MUST NOT be marked critical",
+    "citation":"BRs: 7.1.2.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abe8-ddc1-11ec-ae31-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_aia_missing",
+    "description":"Subscriber Certificate: authorityInformationAccess MUST be present.",
+    "citation":"BRs: 7.1.2.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abe9-ddc1-11ec-b212-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_cert_policy_empty",
+    "description":"Subscriber certificates must contain at least one policy identifier that indicates adherence to CAB standards",
+    "citation":"BRs: 7.1.2.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abea-ddc1-11ec-b8ae-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_certificate_policies_missing",
+    "description":"Subscriber Certificate: certificatePolicies MUST be present and SHOULD NOT be marked critical.",
+    "citation":"BRs: 7.1.2.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abeb-ddc1-11ec-a883-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_country_name_must_appear",
+    "description":"Subscriber Certificate: subject:countryName MUST appear if the subject:organizationName field, subject:givenName field, or subject:surname fields are present.",
+    "citation":"BRs: 7.1.4.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abec-ddc1-11ec-8a98-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_crl_distribution_points_does_not_contain_url",
+    "description":"Subscriber certificate cRLDistributionPoints extension must contain the HTTP URL of the CA’s CRL service",
+    "citation":"BRs: 7.1.2.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abed-ddc1-11ec-98de-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_crl_distribution_points_marked_critical",
+    "description":"Subscriber Certificate: cRLDistributionPoints MUST NOT be marked critical, and MUST contain the HTTP URL of the CA's CRL service.",
+    "citation":"BRs: 7.1.2.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abee-ddc1-11ec-adfa-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_eku_missing",
+    "description":"Subscriber certificates MUST have the extended key usage extension present",
+    "citation":"BRs: 7.1.2.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abef-ddc1-11ec-b7f5-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_eku_server_auth_client_auth_missing",
+    "description":"Subscriber certificates MUST have have either id-kp-serverAuth or id-kp-clientAuth or both present in extKeyUsage",
+    "citation":"BRs: 7.1.2.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abf0-ddc1-11ec-99c6-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_given_name_surname_contains_correct_policy",
+    "description":"Subscriber Certificate: A certificate containing a subject:givenName field or subject:surname field MUST contain the (2.23.140.1.2.3) certPolicy OID.",
+    "citation":"BRs: 7.1.4.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abf1-ddc1-11ec-87d6-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_key_usage_cert_sign_bit_set",
+    "description":"Subscriber Certificate: keyUsage if present, bit positions for keyCertSign and cRLSign MUST NOT be set.",
+    "citation":"BRs: 7.1.2.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abf2-ddc1-11ec-aead-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_key_usage_crl_sign_bit_set",
+    "description":"Subscriber Certificate: keyUsage if present, bit positions for keyCertSign and cRLSign MUST NOT be set.",
+    "citation":"BRs: 7.1.2.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abf3-ddc1-11ec-acc7-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_locality_name_must_appear",
+    "description":"Subscriber Certificate: subject:localityName MUST appear if subject:organizationName, subject:givenName, or subject:surname fields are present but the subject:stateOrProvinceName field is absent.",
+    "citation":"BRs: 7.1.4.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abf4-ddc1-11ec-ae66-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_locality_name_must_not_appear",
+    "description":"Subscriber Certificate: subject:localityName MUST NOT appear if subject:organizationName, subject:givenName, and subject:surname fields are absent.",
+    "citation":"BRs: 7.1.4.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abf5-ddc1-11ec-a801-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_not_is_ca",
+    "description":"Subscriber Certificate: basicContrainsts cA field MUST NOT be true.",
+    "citation":"BRs: 7.1.2.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abf6-ddc1-11ec-9c74-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_or_sub_ca_using_sha1",
+    "description":"CAs MUST NOT issue any new Subscriber certificates or Subordinate CA certificates using SHA-1 after 1 January 2016",
+    "citation":"BRs: 7.1.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abf7-ddc1-11ec-96fb-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_postal_code_must_not_appear",
+    "description":"Subscriber Certificate: subject:postalCode MUST NOT appear if the subject:organizationName field, subject:givenName field, or subject:surname fields are absent.",
+    "citation":"BRs: 7.1.4.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abf8-ddc1-11ec-8cf4-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_province_must_appear",
+    "description":"Subscriber Certificate: subject:stateOrProvinceName MUST appear if the subject:organizationName, subject:givenName, or subject:surname fields are present and subject:localityName is absent.",
+    "citation":"BRs: 7.1.4.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abf9-ddc1-11ec-8297-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_province_must_not_appear",
+    "description":"Subscriber Certificate: subject:stateOrProvinceName MUST NOT appear if the subject:organizationName, subject:givenName, and subject:surname fields are absent.",
+    "citation":"BRs: 7.1.4.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abfa-ddc1-11ec-9a3e-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_street_address_should_not_exist",
+    "description":"Subscriber Certificate: subject:streetAddress MUST NOT appear if subject:organizationName, subject:givenName, and subject:surname fields are absent.",
+    "citation":"BRs: 7.1.4.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abfb-ddc1-11ec-9bae-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_valid_time_longer_than_39_months",
+    "description":"Subscriber Certificates issued after 1 July 2016 but prior to 1 March 2018 MUST have a Validity Period no greater than 39 months.",
+    "citation":"BRs: 6.3.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abfc-ddc1-11ec-9aa1-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_sub_cert_valid_time_longer_than_825_days",
+    "description":"Subscriber Certificates issued after 1 March 2018, but prior to 1 September 2020, MUST NOT have a Validity Period greater than 825 days.",
+    "citation":"BRs: 6.3.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abfd-ddc1-11ec-b1c6-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_common_name_max_length",
+    "description":"The commonName field of the subject MUST be less than 65 characters",
+    "citation":"RFC 5280: A.1",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abfe-ddc1-11ec-bdf1-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_common_name_not_exactly_from_san",
+    "description":"The common name field in subscriber certificates must include only names from the SAN extension",
+    "citation":"BRs: 7.1.4.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0abff-ddc1-11ec-8246-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_common_name_not_from_san",
+    "description":"The common name field in subscriber certificates must include only names from the SAN extension",
+    "citation":"BRs: 7.1.4.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac00-ddc1-11ec-978a-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_contains_noninformational_value",
+    "description":"Subject name fields must not contain '.','-',' ' or any other indication that the field has been omitted",
+    "citation":"BRs: 7.1.4.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac01-ddc1-11ec-8ef3-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_contains_reserved_arpa_ip",
+    "description":"Checks no subject domain name contains a rDNS entry in an .arpa zone specifying a reserved IP address",
+    "citation":"BRs: 7.1.4.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac02-ddc1-11ec-894d-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_contains_reserved_ip",
+    "description":"Certificates expiring later than 11 Jan 2015 MUST NOT contain a reserved IP address in the common name field",
+    "citation":"BRs: 7.1.4.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac03-ddc1-11ec-88f0-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_country_not_iso",
+    "description":"The country name field MUST contain the two-letter ISO code for the country or XX",
+    "citation":"BRs: 7.1.4.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac04-ddc1-11ec-9337-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_dn_country_not_printable_string",
+    "description":"X520 Distinguished Name Country MUST be encoded as PrintableString",
+    "citation":"RFC 5280: Appendix A",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac05-ddc1-11ec-8330-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_dn_not_printable_characters",
+    "description":"X520 Subject fields MUST only contain printable control characters",
+    "citation":"RFC 5280: Appendix A",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac06-ddc1-11ec-9466-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_dn_serial_number_max_length",
+    "description":"The 'Serial Number' field of the subject MUST be less than 65 characters",
+    "citation":"RFC 5280: Appendix A",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac07-ddc1-11ec-a2b9-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_dn_serial_number_not_printable_string",
+    "description":"X520 Distinguished Name SerialNumber MUST be encoded as PrintableString",
+    "citation":"RFC 5280: Appendix A",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac08-ddc1-11ec-a886-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_email_max_length",
+    "description":"The 'Email' field of the subject MUST be less than 256 characters",
+    "citation":"RFC 5280: A.1",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac09-ddc1-11ec-868f-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_empty_without_san",
+    "description":"CAs MUST support subject alternative name if the subject field is an empty sequence",
+    "citation":"RFC 5280: 4.2 & 4.2.1.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac0a-ddc1-11ec-9a48-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_given_name_max_length",
+    "description":"The 'GivenName' field of the subject MUST be less than 32769 characters",
+    "citation":"RFC 5280: A.1",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac0b-ddc1-11ec-b038-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_info_access_marked_critical",
+    "description":"Conforming CAs MUST mark the Subject Info Access extension as non-critical",
+    "citation":"RFC 5280: 4.2.2.2",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac0c-ddc1-11ec-b722-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_locality_name_max_length",
+    "description":"The 'Locality Name' field of the subject MUST be less than 129 characters",
+    "citation":"RFC 5280: A.1",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac0d-ddc1-11ec-b60c-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_not_dn",
+    "description":"When not empty, the subject field MUST be a distinguished name",
+    "citation":"RFC 5280: 4.1.2.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac0e-ddc1-11ec-9e80-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_organization_name_max_length",
+    "description":"The 'Organization Name' field of the subject MUST be less than 65 characters",
+    "citation":"RFC 5280: A.1",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac0f-ddc1-11ec-9c1d-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_organizational_unit_name_max_length",
+    "description":"The 'Organizational Unit Name' field of the subject MUST be less than 65 characters",
+    "citation":"RFC 5280: A.1",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac10-ddc1-11ec-b1bf-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_postal_code_max_length",
+    "description":"The 'PostalCode' field of the subject MUST be less than 17 characters",
+    "citation":"RFC 5280: A.1",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac11-ddc1-11ec-b84a-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_printable_string_badalpha",
+    "description":"PrintableString type's alphabet only includes a-z, A-Z, 0-9, and 11 special characters",
+    "citation":"RFC 5280: Appendix B. ASN.1 Notes",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac12-ddc1-11ec-a2cb-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_state_name_max_length",
+    "description":"The 'State Name' field of the subject MUST be less than 129 characters",
+    "citation":"RFC 5280: A.1",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac13-ddc1-11ec-8ee9-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_street_address_max_length",
+    "description":"The 'StreetAddress' field of the subject MUST be less than 129 characters",
+    "citation":"ITU-T X.520 (02/2001) UpperBounds",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac14-ddc1-11ec-8c89-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_subject_surname_max_length",
+    "description":"The 'Surname' field of the subject MUST be less than 32769 characters",
+    "citation":"RFC 5280: A.1",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac15-ddc1-11ec-b105-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_tbs_signature_rsa_encryption_parameter_not_null",
+    "description":"RSA: Encoded signature algorithm identifier MUST have NULL parameters",
+    "citation":"RFC 4055, Section 5",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac16-ddc1-11ec-98d1-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_tls_server_cert_valid_time_longer_than_398_days",
+    "description":"TLS server certificates issued on or after September 1, 2020 00:00 GMT/UTC must not have a validity period greater than 398 days",
+    "citation":"https://support.apple.com/en-us/HT211025",
+    "groupUuid":"52350996-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac17-ddc1-11ec-8a8f-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_underscore_not_permissible_in_dnsname",
+    "description":"DNSNames MUST NOT contain underscore characters",
+    "citation":"BR 7.1.4.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac18-ddc1-11ec-a7ed-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_utc_time_does_not_include_seconds",
+    "description":"UTCTime values MUST include seconds",
+    "citation":"RFC 5280: 4.1.2.5.1",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac19-ddc1-11ec-99c4-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_utc_time_not_in_zulu",
+    "description":"UTCTime values MUST be expressed in Greenwich Mean Time (Zulu)",
+    "citation":"RFC 5280: 4.1.2.5.1",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac1a-ddc1-11ec-a0bc-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_validity_time_not_positive",
+    "description":"Certificates MUST have a positive time for which they are valid",
+    "citation":"lint.AWSLabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac1b-ddc1-11ec-9c83-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"e_wrong_time_format_pre2050",
+    "description":"Certificates valid through the year 2049 MUST be encoded in UTC time",
+    "citation":"RFC 5280: 4.1.2.5",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac1c-ddc1-11ec-80df-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"n_ca_digital_signature_not_set",
+    "description":"Root and Subordinate CA Certificates that wish to use their private key for signing OCSP responses will not be able to without their digital signature set",
+    "citation":"BRs: 7.1.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac1d-ddc1-11ec-a4b3-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"n_contains_redacted_dnsname",
+    "description":"Some precerts are redacted and of the form ?.?.a.com or *.?.a.com",
+    "citation":"IETF Draft: https://tools.ietf.org/id/draft-strad-trans-redaction-00.html",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac1e-ddc1-11ec-8d99-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"n_dnsname_wildcard_left_of_public_suffix",
+    "description":"the CA MUST establish and follow a documented procedure[^pubsuffix] that determines if the wildcard character occurs in the first label position to the left of a “registry‐controlled” label or “public suffix”",
+    "citation":"BRs: 3.2.2.6",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac1f-ddc1-11ec-abbd-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"n_ecdsa_ee_invalid_ku",
+    "description":"ECDSA end-entity certificates MAY have key usages: digitalSignature, nonRepudiation and keyAgreement",
+    "citation":"RFC 5480 Section 3",
+    "groupUuid":"e1d0ad66-ddb3-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac20-ddc1-11ec-9168-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"n_mp_allowed_eku",
+    "description":"A SubCA certificate must not have key usage that allows for both server auth and email protection, and must not use anyExtendedKeyUsage",
+    "citation":"Mozilla Root Store Policy / Section 5.3",
+    "groupUuid":"52350df6-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac21-ddc1-11ec-ad74-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"n_multiple_subject_rdn",
+    "description":"Certificates typically do not have have multiple attributes in a single RDN (subject). This may be an error.",
+    "citation":"lint.AWSLabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac22-ddc1-11ec-afe7-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"n_san_dns_name_duplicate",
+    "description":"SAN DNSName contains duplicate values",
+    "citation":"awslabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac23-ddc1-11ec-9fb8-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"n_san_iana_pub_suffix_empty",
+    "description":"The domain SHOULD NOT have a bare public suffix",
+    "citation":"awslabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac24-ddc1-11ec-99c2-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"n_sub_ca_eku_missing",
+    "description":"To be considered Technically Constrained, the Subordinate CA certificate MUST have extkeyUsage extension",
+    "citation":"BRs: 7.1.5",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac25-ddc1-11ec-8822-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"n_sub_ca_eku_not_technically_constrained",
+    "description":"Subordinate CA extkeyUsage, either id-kp-serverAuth or id-kp-clientAuth or both values MUST be present to be technically constrained.",
+    "citation":"BRs: 7.1.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac26-ddc1-11ec-b71c-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"n_subject_common_name_included",
+    "description":"Subscriber Certificate: commonName is deprecated.",
+    "citation":"BRs: 7.1.4.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac27-ddc1-11ec-96d6-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_ct_sct_policy_count_unsatisfied",
+    "description":"Check if certificate has enough embedded SCTs to meet Apple CT Policy",
+    "citation":"https://support.apple.com/en-us/HT205280",
+    "groupUuid":"52350996-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac28-ddc1-11ec-9594-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_distribution_point_missing_ldap_or_uri",
+    "description":"When present in the CRLDistributionPoints extension, DistributionPointName SHOULD include at least one LDAP or HTTP URI",
+    "citation":"RFC 5280: 4.2.1.13",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac29-ddc1-11ec-a4db-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_dnsname_underscore_in_trd",
+    "description":"DNSName MUST NOT contain underscore characters",
+    "citation":"BRs: 7.1.4.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac2a-ddc1-11ec-9c81-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_eku_critical_improperly",
+    "description":"Conforming CAs SHOULD NOT mark extended key usage extension as critical if the anyExtendedKeyUsage KeyPurposedID is present",
+    "citation":"RFC 5280: 4.2.1.12",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac2b-ddc1-11ec-b0f2-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_ext_aia_access_location_missing",
+    "description":"When the id-ad-caIssuers accessMethod is used, at least one instance SHOULD specify an accessLocation that is an HTTP or LDAP URI",
+    "citation":"RFC 5280: 4.2.2.1",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac2c-ddc1-11ec-9f1e-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_ext_cert_policy_contains_noticeref",
+    "description":"Compliant certificates SHOULD NOT use the noticeRef option",
+    "citation":"RFC 5280: 4.2.1.4",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac2d-ddc1-11ec-a13b-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_ext_cert_policy_explicit_text_includes_control",
+    "description":"Explicit text should not include any control characters",
+    "citation":"RFC 6818: 3",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac2e-ddc1-11ec-8fbd-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_ext_cert_policy_explicit_text_not_nfc",
+    "description":"When utf8string or bmpstring encoding is used for explicitText field in certificate policy, it SHOULD be normalized by NFC format",
+    "citation":"RFC6181 3",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac2f-ddc1-11ec-a768-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_ext_cert_policy_explicit_text_not_utf8",
+    "description":"Compliant certificates should use the utf8string encoding for explicitText",
+    "citation":"RFC 6818: 3",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac30-ddc1-11ec-b3f9-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_ext_crl_distribution_marked_critical",
+    "description":"If included, the CRL Distribution Points extension SHOULD NOT be marked critical",
+    "citation":"RFC 5280: 4.2.1.13",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac31-ddc1-11ec-8496-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_ext_ian_critical",
+    "description":"Issuer alternate name should be marked as non-critical",
+    "citation":"RFC 5280: 4.2.1.7",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac32-ddc1-11ec-bcae-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_ext_key_usage_not_critical",
+    "description":"The keyUsage extension SHOULD be critical",
+    "citation":"RFC 5280: 4.2.1.3",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac33-ddc1-11ec-b7e2-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_ext_policy_map_not_critical",
+    "description":"Policy mappings should be marked as critical",
+    "citation":"RFC 5280: 4.2.1.5",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac34-ddc1-11ec-9359-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_ext_policy_map_not_in_cert_policy",
+    "description":"Each issuerDomainPolicy named in the policy mappings extension should also be asserted in a certificate policies extension",
+    "citation":"RFC 5280: 4.2.1.5",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac35-ddc1-11ec-90b5-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_ext_san_critical_with_subject_dn",
+    "description":"If the subject contains a distinguished name, subjectAlternateName SHOULD be non-critical",
+    "citation":"RFC 5280: 4.2.1.6",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac36-ddc1-11ec-8d2e-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_ext_subject_key_identifier_missing_sub_cert",
+    "description":"Sub certificates SHOULD include Subject Key Identifier in end entity certs",
+    "citation":"RFC 5280: 4.2 & 4.2.1.2",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac37-ddc1-11ec-9cd0-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_extra_subject_common_names",
+    "description":"if present the subject commonName field MUST contain a single IP address or Fully-Qualified Domain Name",
+    "citation":"BRs: 7.1.4.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac38-ddc1-11ec-ada9-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_ian_iana_pub_suffix_empty",
+    "description":"Domain SHOULD NOT have a bare public suffix",
+    "citation":"awslabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac39-ddc1-11ec-9198-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_issuer_dn_leading_whitespace",
+    "description":"AttributeValue in issuer RelativeDistinguishedName sequence SHOULD NOT have leading whitespace",
+    "citation":"lint.AWSLabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac3a-ddc1-11ec-b162-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_issuer_dn_trailing_whitespace",
+    "description":"AttributeValue in issuer RelativeDistinguishedName sequence SHOULD NOT have trailing whitespace",
+    "citation":"lint.AWSLabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac3b-ddc1-11ec-8a50-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_multiple_issuer_rdn",
+    "description":"Certificates should not have multiple attributes in a single RDN (issuer)",
+    "citation":"awslabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac3c-ddc1-11ec-a959-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_name_constraint_on_edi_party_name",
+    "description":"The name constraints extension SHOULD NOT impose constraints on the ediPartyName name form",
+    "citation":"RFC 5280: 4.2.1.10",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac3d-ddc1-11ec-8d13-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_name_constraint_on_registered_id",
+    "description":"The name constraints extension SHOULD NOT impose constraints on the registeredID name form",
+    "citation":"RFC 5280: 4.2.1.10",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac3e-ddc1-11ec-bb38-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_name_constraint_on_x400",
+    "description":"The name constraints extension SHOULD NOT impose constraints on the x400Address name form",
+    "citation":"RFC 5280: 4.2.1.10",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac3f-ddc1-11ec-a0f1-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_qcstatem_qcpds_lang_case",
+    "description":"Checks that a QC Statement of the type id-etsi-qcs-QcPDS features a language code comprised of only lower case letters",
+    "citation":"ETSI EN 319 412 - 5 V2.2.1 (2017 - 11) / Section 4.3.4",
+    "groupUuid":"52350f36-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac40-ddc1-11ec-ab10-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_qcstatem_qctype_web",
+    "description":"Checks that a QC Statement of the type Id-etsi-qcs-QcType features features at least the type IdEtsiQcsQctWeb",
+    "citation":"ETSI EN 319 412 - 5 V2.2.1 (2017 - 11) / Section 4.2.3",
+    "groupUuid":"52350f36-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac41-ddc1-11ec-8030-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_rfc_dnsname_underscore_in_trd",
+    "description":"DNSName MUST NOT contain underscore characters",
+    "citation":"RFC5280: 4.1.2.6",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac42-ddc1-11ec-9718-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_root_ca_basic_constraints_path_len_constraint_field_present",
+    "description":"Root CA certificate basicConstraint extension pathLenConstraint field SHOULD NOT be present",
+    "citation":"BRs: 7.1.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac43-ddc1-11ec-b458-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_root_ca_contains_cert_policy",
+    "description":"Root CA Certificate: certificatePolicies SHOULD NOT be present.",
+    "citation":"BRs: 7.1.2.1",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac44-ddc1-11ec-a31d-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_rsa_mod_factors_smaller_than_752",
+    "description":"RSA: Modulus SHOULD also have the following characteristics: no factors smaller than 752",
+    "citation":"BRs: 6.1.6",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac45-ddc1-11ec-abec-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_rsa_mod_not_odd",
+    "description":"RSA: Modulus SHOULD also have the following characteristics: an odd number",
+    "citation":"BRs: 6.1.6",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac46-ddc1-11ec-a097-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_rsa_public_exponent_not_in_range",
+    "description":"RSA: Public exponent SHOULD be in the range between 2^16 + 1 and 2^256 - 1",
+    "citation":"BRs: 6.1.6",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac47-ddc1-11ec-b03a-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_sub_ca_aia_does_not_contain_issuing_ca_url",
+    "description":"Subordinate CA Certificate: authorityInformationAccess SHOULD also contain the HTTP URL of the Issuing CA's certificate.",
+    "citation":"BRs: 7.1.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac48-ddc1-11ec-a43e-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_sub_ca_aia_missing",
+    "description":"Subordinate CA Certificate: authorityInformationAccess SHOULD be present.",
+    "citation":"BRs: 7.1.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac49-ddc1-11ec-b55f-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_sub_ca_certificate_policies_marked_critical",
+    "description":"Subordinate CA certificates certificatePolicies extension should not be marked as critical",
+    "citation":"BRs: 7.1.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac4a-ddc1-11ec-bfe4-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_sub_ca_eku_critical",
+    "description":"Subordinate CA certificate extkeyUsage extension should be marked non-critical if present",
+    "citation":"BRs: 7.1.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac4b-ddc1-11ec-8887-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_sub_ca_name_constraints_not_critical",
+    "description":"Subordinate CA Certificate: NameConstraints if present, SHOULD be marked critical.",
+    "citation":"BRs: 7.1.2.2",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac4c-ddc1-11ec-87b4-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_sub_cert_aia_does_not_contain_issuing_ca_url",
+    "description":"Subscriber certificates authorityInformationAccess extension should contain the HTTP URL of the issuing CA’s certificate",
+    "citation":"BRs: 7.1.2.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac4d-ddc1-11ec-bc41-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_sub_cert_certificate_policies_marked_critical",
+    "description":"Subscriber Certificate: certificatePolicies MUST be present and SHOULD NOT be marked critical.",
+    "citation":"BRs: 7.1.2.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac4e-ddc1-11ec-8d8b-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_sub_cert_eku_extra_values",
+    "description":"Subscriber Certificate: extKeyUsage values other than id-kp-serverAuth, id-kp-clientAuth, and id-kp-emailProtection SHOULD NOT be present.",
+    "citation":"BRs: 7.1.2.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac4f-ddc1-11ec-9e02-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_sub_cert_sha1_expiration_too_long",
+    "description":"Subscriber certificates using the SHA-1 algorithm SHOULD NOT have an expiration date later than 1 Jan 2017",
+    "citation":"BRs: 7.1.3",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac50-ddc1-11ec-99f4-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_subject_contains_malformed_arpa_ip",
+    "description":"Checks no subject domain name contains a rDNS entry in the registry-controlled .arpa zone with the wrong number of labels, or an invalid IP address (RFC 3596, BCP49)",
+    "citation":"BRs: 3.2.2.6",
+    "groupUuid":"5235104e-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac51-ddc1-11ec-bcf8-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_subject_dn_leading_whitespace",
+    "description":"AttributeValue in subject RelativeDistinguishedName sequence SHOULD NOT have leading whitespace",
+    "citation":"lint.AWSLabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac52-ddc1-11ec-ab54-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_subject_dn_trailing_whitespace",
+    "description":"AttributeValue in subject RelativeDistinguishedName sequence SHOULD NOT have trailing whitespace",
+    "citation":"lint.AWSLabs certlint",
+    "groupUuid":"523512b0-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac53-ddc1-11ec-b681-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_subject_given_name_recommended_max_length",
+    "description":"X.411 (1988) describes ub-common-name-length to be 64 bytes long. As systems may have targeted this length, for compatibility purposes it may be prudent to limit given names to this length.",
+    "citation":"ITU-T Rec. X.411 (11/1988), Annex B Reference Definition of MTS Parameter Upper Bounds",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac54-ddc1-11ec-8e15-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_subject_surname_recommended_max_length",
+    "description":"X.411 (1988) describes ub-common-name-length to be 64 bytes long. As systems may have targeted this length, for compatibility purposes it may be prudent to limit surnames to this length.",
+    "citation":"ITU-T Rec. X.411 (11/1988), Annex B Reference Definition of MTS Parameter Upper Bounds",
+    "groupUuid":"523513dc-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac55-ddc1-11ec-b953-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"w_tls_server_cert_valid_time_longer_than_397_days",
+    "description":"TLS server certificates issued on or after September 1, 2020 00:00 GMT/UTC should not have a validity period greater than 397 days",
+    "citation":"https://support.apple.com/en-us/HT211025",
+    "groupUuid":"52350996-ddb2-11ec-9d64-0242ac120002",
+    "uuid":"40f0ac56-ddc1-11ec-9825-34cff65c6ee3",
+    "kind":"x509",
+    "certificateType":"X509"
+  },
+  {
+    "name":"cus_public_key_algorithm",
+    "description":"Public key algorithm of the certificate",
+    "uuid":"6dcf0d44-ddc3-11ec-9d64-0242ac120002",
+    "kind":"x509",
+    "certificateType":"X509",
+    "attributes":[
+      {
+        "name":"condition",
+        "uuid":"166b5cf52-63f2-11ec-90d6-0242ac120013",
+        "label":"Condition",
+        "type":"STRING",
+        "required":true,
+        "readOnly":false,
+        "editable":false,
+        "visible":true,
+        "multiSelect":false,
+        "list": true,
+        "description":"Select the condition to apply",
+        "content":[
+          {
+            "value":"Equals"
+          },
+          {
+            "value":"NotEquals"
+          }
+        ]
+      },
+      {
+        "name":"algorithm",
+        "uuid":"166b5cf52-63f2-11ec-90d6-0242ac120003",
+        "label":"Public Key Algorithm",
+        "type":"STRING",
+        "required":true,
+        "readOnly":false,
+        "editable":false,
+        "visible":true,
+        "multiSelect":true,
+        "list": true,
+        "description":"Select the hashing algorithm to check for compliance",
+        "content":[
+          {
+            "value":"RSA"
+          },
+          {
+            "value":"DSA"
+          },
+          {
+            "value":"ECDSA"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name":"cus_hashing_algorithm",
+    "description":"Hashing algorithm of the certificate",
+    "uuid":"b44d3ba2-e65a-11ec-8fea-0242ac120002",
+    "kind":"x509",
+    "certificateType":"X509",
+    "attributes":[
+      {
+        "name":"condition",
+        "uuid":"b44d3f44-e65a-11ec-8fea-0242ac120002",
+        "label":"Condition",
+        "type":"STRING",
+        "required":true,
+        "readOnly":false,
+        "editable":false,
+        "visible":true,
+        "multiSelect":false,
+        "list": true,
+        "description":"Select the condition to apply",
+        "content":[
+          {
+            "value":"Equals"
+          },
+          {
+            "value":"NotEquals"
+          }
+        ]
+      },
+      {
+        "name":"algorithm",
+        "uuid":"b44d408e-e65a-11ec-8fea-0242ac120002",
+        "label":"Hashing Algorithm",
+        "type":"STRING",
+        "required":true,
+        "readOnly":false,
+        "editable":false,
+        "visible":true,
+        "multiSelect":true,
+        "list": true,
+        "description":"Select the hashing algorithm to check for compliance",
+        "content":[
+          {
+            "value":"MD5-RSA"
+          },
+          {
+            "value":"SHA1-RSA"
+          },
+          {
+            "value":"SHA224-RSA"
+          },
+          {
+            "value":"SHA256-RSA"
+          },
+          {
+            "value":"SHA384-RSA"
+          },
+          {
+            "value":"SHA512-RSA"
+          },
+          {
+            "value":"ECDSA-SHA1"
+          },
+          {
+            "value":"ECDSA-SHA224"
+          },
+          {
+            "value":"ECDSA-SHA256"
+          },
+          {
+            "value":"ECDSA-SHA384"
+          },
+          {
+            "value":"ECDSA-SHA512"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name":"cus_elliptic_curve",
+    "description":"Elliptic Curve of the certificate created with EC key",
+    "uuid":"5f6baae8-e663-11ec-8fea-0242ac120002",
+    "kind":"x509",
+    "certificateType":"X509",
+    "attributes":[
+      {
+        "name":"condition",
+        "uuid":"5f6bad5e-e663-11ec-8fea-0242ac120002",
+        "label":"Condition",
+        "type":"STRING",
+        "required":true,
+        "readOnly":false,
+        "editable":false,
+        "visible":true,
+        "list": true,
+        "multiSelect":false,
+        "description":"Select the condition to apply",
+        "content":[
+          {
+            "value":"Equals"
+          },
+          {
+            "value":"NotEquals"
+          }
+        ]
+      },
+      {
+        "name":"curve",
+        "uuid":"5f6bb196-e663-11ec-8fea-0242ac120002",
+        "label":"Curve",
+        "type":"STRING",
+        "required":true,
+        "readOnly":false,
+        "editable":false,
+        "visible":true,
+        "multiSelect":true,
+        "list": true,
+        "description":"Select the Curve to check for compliance",
+        "content":[
+          {
+            "value":"P-224"
+          },
+          {
+            "value":"P-256"
+          },
+          {
+            "value":"P-384"
+          },
+          {
+            "value":"P-521"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name":"cus_key_length",
+    "description":"Public Key length of the certificate should be",
+    "uuid":"7ed00480-e706-11ec-8fea-0242ac120002",
+    "kind":"x509",
+    "certificateType":"X509",
+    "attributes":[
+      {
+        "name":"condition",
+        "uuid":"7ed00782-e706-11ec-8fea-0242ac120002",
+        "label":"Condition",
+        "type":"STRING",
+        "required":true,
+        "readOnly":false,
+        "editable":false,
+        "visible":true,
+        "multiSelect":false,
+        "list": true,
+        "description":"Select the condition to apply",
+        "content":[
+          {
+            "value":"Equals"
+          },
+          {
+            "value":"NotEquals"
+          },
+          {
+            "value":"Greater"
+          },
+          {
+            "value":"Lesser"
+          }
+        ]
+      },
+      {
+        "name":"length",
+        "uuid":"7ed00886-e706-11ec-8fea-0242ac120002",
+        "label":"Key Length",
+        "type":"INTEGER",
+        "required":true,
+        "readOnly":false,
+        "editable":false,
+        "visible":true,
+        "multiSelect":false,
+        "description":"Enter the key size of the certificate to be checked"
+      }
+    ]
+  }
+]
