@@ -3,6 +3,7 @@ package compliance
 import (
 	"CZERTAINLY-X509-Compliance-Provider/cmd/rules"
 	"CZERTAINLY-X509-Compliance-Provider/cmd/utils"
+
 	"github.com/zmap/zcrypto/x509"
 )
 

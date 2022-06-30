@@ -2,9 +2,12 @@ package rules
 
 import (
 	"encoding/json"
-	"go.uber.org/zap"
 	"io/ioutil"
+	"path/filepath"
+	"runtime"
 	"strings"
+
+	"go.uber.org/zap"
 )
 
 type service struct {
@@ -15,12 +18,16 @@ var rulesDefinitions []RuleDefinition
 var groupDefinitions []GroupDefinition
 var uuidToRuleMap = map[string]RuleDefinition{}
 var nameToUuidMap = map[string]string{}
+var RULE_FILE_NAME = "rules.json"
+var GROUP_FILE_NAME = "groups.json"
 
 func NewService(logger *zap.SugaredLogger) Service {
-	rulesFile, _ := ioutil.ReadFile("rules.json")
+
+	_, base, _, _ := runtime.Caller(0)
+	rulesFile, _ := ioutil.ReadFile(filepath.Join(filepath.Dir(base), "../..", RULE_FILE_NAME))
 	_ = json.Unmarshal(rulesFile, &rulesDefinitions)
 
-	groupsFile, _ := ioutil.ReadFile("groups.json")
+	groupsFile, _ := ioutil.ReadFile(filepath.Join(filepath.Dir(base), "../..", GROUP_FILE_NAME))
 	_ = json.Unmarshal(groupsFile, &groupDefinitions)
 
 	generateUuidToNameMap()

@@ -14,13 +14,13 @@ func GetAttributeValue(attributeName string, attributes []attributes.Attributes)
 	return nil
 }
 
-func GetRequestAttributeValue(attributeName string, attributes []attributes.RequestAttributes) (value interface{}) {
-	if len(attributes) == 0 {
+func GetRequestAttributeValue(attributeName string, attrs []attributes.RequestAttributes) (value interface{}) {
+	if len(attrs) == 0 {
 		return nil
 	}
-	for _, attribute := range attributes {
+	for _, attribute := range attrs {
 		if attribute.Name == attributeName {
-			return attribute.Value
+			return (attribute.Content.(attributes.BaseAttributeContent)).Value
 		}
 	}
 	return nil
