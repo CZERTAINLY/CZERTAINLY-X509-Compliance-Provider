@@ -2,12 +2,14 @@ package attributes
 
 type AttributeType string
 
+// AttributeType constants. These are the types of attributes that can be used in the rules.
 const (
 	STRING  AttributeType = "string"
 	INTEGER AttributeType = "integer"
 	BOOLEAN AttributeType = "boolean"
 )
 
+// Attribute is a single attribute that can be used in the rules.
 type (
 	Attributes struct {
 		UUID        string        `json:"uuid,omitempty"`
@@ -24,7 +26,14 @@ type (
 		List        bool          `json:"list"`
 	}
 
+	// BaseAttributeContent for the values of attributes
 	BaseAttributeContent struct {
 		Value interface{} `json:"value"`
+	}
+
+	RequestAttributes struct {
+		Name    string      `json:"name"`
+		UUID    string      `json:"uuid"`
+		Content interface{} `json:"content"`
 	}
 )

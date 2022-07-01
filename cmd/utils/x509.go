@@ -4,10 +4,12 @@ import (
 	"crypto/dsa"
 	"crypto/ecdsa"
 	"crypto/rsa"
-	"github.com/zmap/zcrypto/x509"
 	"log"
+
+	"github.com/zmap/zcrypto/x509"
 )
 
+// GetPublicKeySize returns the size of the public key in bits
 func GetPublicKeySize(certificate *x509.Certificate) int {
 	switch publicKey := certificate.PublicKey.(type) {
 	case *rsa.PublicKey:

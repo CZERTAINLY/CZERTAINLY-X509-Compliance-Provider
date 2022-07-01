@@ -2,18 +2,21 @@ package rules
 
 import (
 	"fmt"
-	"go.uber.org/zap"
 	"testing"
+
+	"go.uber.org/zap"
 )
 
 var logger *zap.Logger
 var tService Service
+var RULE_FILE_NAME = "../../rules.json"
+var GROUP_FILE_NAME = "../../groups.json"
 
 func init() {
 	logger, _ = zap.NewProduction()
 	defer logger.Sync()
 	sugar := logger.Sugar()
-	tService = NewService(sugar)
+	tService = NewService(sugar, RULE_FILE_NAME, GROUP_FILE_NAME)
 }
 
 func TestGetRuleFromUuid(t *testing.T) {

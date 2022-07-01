@@ -5,8 +5,9 @@ import (
 	"CZERTAINLY-X509-Compliance-Provider/cmd/rules"
 	"context"
 	"encoding/json"
-	"github.com/gorilla/mux"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 type Status string

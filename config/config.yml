@@ -1,0 +1,8 @@
+# Server related configurations
+server:
+  protocol: http
+  port: 8080
+
+# Logger related configurations
+log:
+  level: INFO

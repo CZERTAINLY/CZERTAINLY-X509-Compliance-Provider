@@ -16,6 +16,7 @@ func Contains(s []string, str string) bool {
 	return false
 }
 
+// InterfaceAsStringArray converts an interface to a string array
 func InterfaceAsStringArray(value interface{}) []string {
 	var resultingInfo []string
 	if reflect.TypeOf(value).String() == "string" {
@@ -30,6 +31,7 @@ func InterfaceAsStringArray(value interface{}) []string {
 	return resultingInfo
 }
 
+// InterfaceAsIntArray converts an interface to a int array
 func InterfaceAsInteger(value interface{}) int {
 	incomingDataType := reflect.TypeOf(value).String()
 	switch incomingDataType {

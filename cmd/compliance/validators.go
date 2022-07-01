@@ -3,6 +3,7 @@ package compliance
 import (
 	"CZERTAINLY-X509-Compliance-Provider/cmd/rules"
 	"CZERTAINLY-X509-Compliance-Provider/cmd/utils"
+
 	"github.com/zmap/zcrypto/x509"
 )
 
@@ -17,6 +18,7 @@ func boolToRuleStatusMapper(boolData bool) (status rules.RuleStatus) {
 	return rules.NOK
 }
 
+// HashAlgorithmValidation validates the hash algorithm of the certificate
 func HashingAlgorithmValidation(certificate *x509.Certificate, requestRule RequestRules, request Request, ruleDefinition rules.RuleDefinition) ResponseRules {
 	condition := utils.GetRequestAttributeValue("condition", requestRule.Attributes)
 	value := utils.GetRequestAttributeValue("algorithm", requestRule.Attributes)
@@ -34,6 +36,7 @@ func HashingAlgorithmValidation(certificate *x509.Certificate, requestRule Reque
 	return ResponseRules{UUID: ruleDefinition.UUID, Name: ruleDefinition.Name, Status: rules.NA}
 }
 
+// PublicKeyAlgorithmValidation validates the public key algorithm of the certificate
 func PublicKeyAlgorithmValidation(certificate *x509.Certificate, requestRule RequestRules, request Request, ruleDefinition rules.RuleDefinition) ResponseRules {
 	condition := utils.GetRequestAttributeValue("condition", requestRule.Attributes)
 	value := utils.GetRequestAttributeValue("algorithm", requestRule.Attributes)
@@ -48,6 +51,7 @@ func PublicKeyAlgorithmValidation(certificate *x509.Certificate, requestRule Req
 	return ResponseRules{UUID: ruleDefinition.UUID, Name: ruleDefinition.Name, Status: rules.NA}
 }
 
+// EccCurveValidation validates the curve of the certificate
 func EcCurveValidation(certificate *x509.Certificate, requestRule RequestRules, request Request, ruleDefinition rules.RuleDefinition) ResponseRules {
 	condition := utils.GetRequestAttributeValue("condition", requestRule.Attributes)
 	value := utils.GetRequestAttributeValue("algorithm", requestRule.Attributes)
@@ -62,6 +66,7 @@ func EcCurveValidation(certificate *x509.Certificate, requestRule RequestRules, 
 	return ResponseRules{UUID: ruleDefinition.UUID, Name: ruleDefinition.Name, Status: rules.NA}
 }
 
+// KeySizeValidation validates the key size of the certificate
 func KeySizeValidator(certificate *x509.Certificate, requestRule RequestRules, request Request, ruleDefinition rules.RuleDefinition) ResponseRules {
 	condition := utils.GetRequestAttributeValue("condition", requestRule.Attributes)
 	value := utils.InterfaceAsInteger(utils.GetRequestAttributeValue("length", requestRule.Attributes))
