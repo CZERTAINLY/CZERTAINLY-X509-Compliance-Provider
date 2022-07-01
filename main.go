@@ -35,6 +35,8 @@ type Config struct {
 // CompositeRouter is the router for the server
 var CompositeRouter = mux.NewRouter()
 var config Config
+var RULE_FILE_NAME = "./rules.json"
+var GROUP_FILE_NAME = "./groups.json"
 
 // init is called before main. It initializes the configuration of the server
 func init() {
@@ -111,7 +113,7 @@ func createService(logger *zap.SugaredLogger) (info.Service, compliance.Service,
 
 	var rulesSrv rules.Service
 	{
-		rulesSrv = rules.NewService(logger)
+		rulesSrv = rules.NewService(logger, RULE_FILE_NAME, GROUP_FILE_NAME)
 	}
 	return infoSrv, complianceSrv, rulesSrv
 }

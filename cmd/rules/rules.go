@@ -18,17 +18,15 @@ var rulesDefinitions []RuleDefinition
 var groupDefinitions []GroupDefinition
 var uuidToRuleMap = map[string]RuleDefinition{}
 var nameToUuidMap = map[string]string{}
-var RULE_FILE_NAME = "./rules.json"
-var GROUP_FILE_NAME = "./groups.json"
 
-func NewService(logger *zap.SugaredLogger) Service {
+func NewService(logger *zap.SugaredLogger, ruleFileName string, groupFileName string) Service {
 
-	ruleFilePath, _ := filepath.Abs(RULE_FILE_NAME)
+	ruleFilePath, _ := filepath.Abs(ruleFileName)
 	fmt.Println("Rule File Path: ", ruleFilePath)
 	rulesFile, _ := ioutil.ReadFile(ruleFilePath)
 	_ = json.Unmarshal(rulesFile, &rulesDefinitions)
 
-	groupFilePath, _ := filepath.Abs(GROUP_FILE_NAME)
+	groupFilePath, _ := filepath.Abs(groupFileName)
 	fmt.Println("Group File Path: ", groupFilePath)
 	groupsFile, _ := ioutil.ReadFile(groupFilePath)
 	_ = json.Unmarshal(groupsFile, &groupDefinitions)
