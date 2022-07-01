@@ -3,8 +3,9 @@ package compliance
 import (
 	"CZERTAINLY-X509-Compliance-Provider/cmd/rules"
 	"encoding/base64"
-	"go.uber.org/zap"
 	"strings"
+
+	"go.uber.org/zap"
 
 	"github.com/zmap/zcrypto/x509"
 	"github.com/zmap/zlint/v3"
@@ -23,6 +24,7 @@ func NewService(logger *zap.SugaredLogger) Service {
 
 func (s service) ComplianceCheck(kind string, request Request) (response Response, err error) {
 	s.logger.Info("Entering ComplianceCheck with Kind:  ", kind, " request ", request)
+	// Arrest any error in the process and return the status as NO
 	defer func() {
 		if p := recover(); p != nil {
 			response = Response{Status: NOK, Rules: nil}
@@ -33,6 +35,8 @@ func (s service) ComplianceCheck(kind string, request Request) (response Respons
 
 	var ruleNamesForRegistry []string
 	var complianceResponse []ResponseRules
+
+	// Normalize the certificate string to remove the newline characters
 	s.logger.Debug("Incoming certificate: ", request.Certificate)
 	certificate := s.normalizeCertificate(request.Certificate)
 	s.logger.Debug("Normalized Certificate: ", certificate)
@@ -41,6 +45,7 @@ func (s service) ComplianceCheck(kind string, request Request) (response Respons
 	parsed, err := x509.ParseCertificate(block)
 	s.logger.Warn(err)
 
+	// Iterate and evaluate the rules, split them for custom rule and rules applicable with zlint
 	for _, rule := range request.Rules {
 		ruleDefinition := rules.GetRuleFromUuid(rule.UUID)
 		s.logger.Debug("Rule definition: ", ruleDefinition)
@@ -53,6 +58,8 @@ func (s service) ComplianceCheck(kind string, request Request) (response Respons
 		}
 	}
 	s.logger.Info("Total rules for ZLinter: ", len(ruleNamesForRegistry))
+
+	//If there are rules to apply for zlint, apply them
 	if len(ruleNamesForRegistry) > 0 {
 		s.logger.Debug("Rule names for the registeration: ", ruleNamesForRegistry)
 		registry, _ := lint.GlobalRegistry().Filter(lint.FilterOptions{
@@ -65,14 +72,18 @@ func (s service) ComplianceCheck(kind string, request Request) (response Respons
 		}
 	}
 	s.logger.Debug("Compliance Response: ", complianceResponse)
+
+	// Return the compliance response
 	return Response{s.computeOverallStatus(complianceResponse), complianceResponse}, nil
 }
 
+// normalizeCertificate removes the newline characters from the certificate
 func (s service) normalizeCertificate(certificate string) string {
 	replacer := strings.NewReplacer("-----BEGIN CERTIFICATE-----", "", "-----END CERTIFICATE-----", "", "\n", "", "\r", "")
 	return replacer.Replace(certificate)
 }
 
+// getStatus returns the status of the rule based on the result of zlint
 func (s service) getStatus(status lint.LintStatus) rules.RuleStatus {
 	s.logger.Debug("Entering getStatus with Status: ", status)
 	switch status {
@@ -88,6 +99,7 @@ func (s service) getStatus(status lint.LintStatus) rules.RuleStatus {
 	}
 }
 
+// evaluateCustomRule evaluates the custom rules and produces the response
 func (s service) computeOverallStatus(responseRules []ResponseRules) (status Status) {
 	s.logger.Info("Entering Overall Compliance Status Calculation")
 	isNotApplicable := true
@@ -115,6 +127,7 @@ func (s service) computeOverallStatus(responseRules []ResponseRules) (status Sta
 	}
 }
 
+// evaluateCustomRule evaluates the custom rules and produces the response
 func (s service) evaluateCustomRule(certificate *x509.Certificate, requestRule RequestRules, request Request, ruleDefinition rules.RuleDefinition) (response ResponseRules) {
 	s.logger.Info("Evaluating custom rule: ", requestRule, " Rule Definition ", ruleDefinition)
 	defer func() {

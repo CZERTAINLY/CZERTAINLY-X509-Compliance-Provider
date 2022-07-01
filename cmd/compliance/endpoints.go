@@ -2,6 +2,7 @@ package compliance
 
 import (
 	"context"
+
 	"github.com/go-kit/kit/endpoint"
 )
 

@@ -2,9 +2,9 @@ package rules
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"path/filepath"
-	"runtime"
 	"strings"
 
 	"go.uber.org/zap"
@@ -18,16 +18,19 @@ var rulesDefinitions []RuleDefinition
 var groupDefinitions []GroupDefinition
 var uuidToRuleMap = map[string]RuleDefinition{}
 var nameToUuidMap = map[string]string{}
-var RULE_FILE_NAME = "rules.json"
-var GROUP_FILE_NAME = "groups.json"
+var RULE_FILE_NAME = "./rules.json"
+var GROUP_FILE_NAME = "./groups.json"
 
 func NewService(logger *zap.SugaredLogger) Service {
 
-	_, base, _, _ := runtime.Caller(0)
-	rulesFile, _ := ioutil.ReadFile(filepath.Join(filepath.Dir(base), "../..", RULE_FILE_NAME))
+	ruleFilePath, _ := filepath.Abs(RULE_FILE_NAME)
+	fmt.Println("Rule File Path: ", ruleFilePath)
+	rulesFile, _ := ioutil.ReadFile(ruleFilePath)
 	_ = json.Unmarshal(rulesFile, &rulesDefinitions)
 
-	groupsFile, _ := ioutil.ReadFile(filepath.Join(filepath.Dir(base), "../..", GROUP_FILE_NAME))
+	groupFilePath, _ := filepath.Abs(GROUP_FILE_NAME)
+	fmt.Println("Group File Path: ", groupFilePath)
+	groupsFile, _ := ioutil.ReadFile(groupFilePath)
 	_ = json.Unmarshal(groupsFile, &groupDefinitions)
 
 	generateUuidToNameMap()

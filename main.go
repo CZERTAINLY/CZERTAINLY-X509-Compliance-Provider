@@ -12,6 +12,7 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	"path/filepath"
 	"strings"
 	"syscall"
 
@@ -20,26 +21,30 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+// Config is the configuration of the server read from yaml or environment variables
 type Config struct {
 	Server struct {
-		Port string `yaml:"port", envconfig:"SERVER_PORT"`
+		Port     string `yaml:"port", envconfig:"SERVER_PORT"`
+		Protocol string `yaml:"protocol", envconfig:"SERVER_PROTOCOL"`
 	} `yaml:"server"`
 	Log struct {
 		Level string `yaml:"level", envconfig:"LOG_LEVEL"`
 	} `yaml:"log"`
 }
 
+// CompositeRouter is the router for the server
 var CompositeRouter = mux.NewRouter()
 var config Config
 
+// init is called before main. It initializes the configuration of the server
 func init() {
 	readConfigFile(&config)
 	readEnvironmentVariables(&config)
 }
 
+// main is the entry point of the program
 func main() {
-
-	var httpAddr = flag.String("http", ":"+config.Server.Port, "http listen address")
+	var httpAddr = flag.String(config.Server.Protocol, ":"+config.Server.Port, "http listen address")
 	rawJSON := []byte(`{
 		"level": "` + strings.ToLower(config.Log.Level) + `",
 		"encoding": "json",
@@ -53,6 +58,8 @@ func main() {
 		  "timeEncoder": "rfc3339"
 		}
 	  }`)
+
+	// Create a logger
 	var cfg zap.Config
 	if err := json.Unmarshal(rawJSON, &cfg); err != nil {
 		panic(err)
@@ -67,6 +74,7 @@ func main() {
 	defer logger.Sync()
 	sugar := logger.Sugar()
 
+	// Create the services
 	flag.Parse()
 	ctx := context.Background()
 	errs := make(chan error)
@@ -74,6 +82,7 @@ func main() {
 	infoSrv, complianceSrv, rulesSrv := createService(sugar)
 	infoEndpoints, complianceEndpoints, rulesEndpoints := createEndPoints(infoSrv, complianceSrv, rulesSrv)
 
+	// Start the services
 	go func() {
 		c := make(chan os.Signal, 1)
 		signal.Notify(c, syscall.SIGINT, syscall.SIGTERM)
@@ -88,6 +97,7 @@ func main() {
 	fmt.Print(<-errs)
 }
 
+// createService creates the services for the main to use it
 func createService(logger *zap.SugaredLogger) (info.Service, compliance.Service, rules.Service) {
 	var infoSrv info.Service
 	{
@@ -106,6 +116,7 @@ func createService(logger *zap.SugaredLogger) (info.Service, compliance.Service,
 	return infoSrv, complianceSrv, rulesSrv
 }
 
+// createEndPoints creates the endpoints for the main to use it
 func createEndPoints(infoService info.Service, complianceService compliance.Service, rulesService rules.Service) (info.EndPoints, compliance.EndPoints, rules.EndPoints) {
 	infoEndpoints := info.MakeEndpoints(infoService, CompositeRouter)
 	complianceEndpoints := compliance.MakeEndpoints(complianceService)
@@ -118,8 +129,10 @@ func processError(err error) {
 	os.Exit(2)
 }
 
+// readConfigFile reads the configuration file from yaml and set them in config
 func readConfigFile(cfg *Config) {
-	f, err := os.Open("config.yml")
+	absPath, _ := filepath.Abs("config/config.yml")
+	f, err := os.Open(absPath)
 	if err != nil {
 		processError(err)
 	}
@@ -132,13 +145,18 @@ func readConfigFile(cfg *Config) {
 	}
 }
 
+// readEnvironmentVariables reads the configuration from environment variables and set them in config
 func readEnvironmentVariables(cfg *Config) {
 	port := os.Getenv("SERVER_PORT")
 	logLevel := os.Getenv("LOG_LEVEL")
+	protocol := os.Getenv("SERVER_PROTOCOL")
 	if port != "" {
 		cfg.Server.Port = port
 	}
 	if logLevel != "" {
 		cfg.Log.Level = logLevel
+	}
+	if protocol != "" {
+		cfg.Server.Protocol = protocol
 	}
 }

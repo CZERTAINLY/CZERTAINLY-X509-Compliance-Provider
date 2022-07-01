@@ -1,25 +1,29 @@
-#GO lang buld the docket container
+# syntax=docker/dockerfile
+# Install golang
 
-#Using Go version 1.18.2
-FROM golang:1.18.2
-WORKDIR /app
+# Build Stage
+FROM golang:1.18-alpine3.15 AS builder
 
-#Copy the modules and the checksum of the modules
-COPY go.mod ./
-COPY go.sum ./
+ENV WRK_DIR /app
 
-#Download the go modules
-RUN go mod download
-COPY *.go ./
+# Copy the contents to /app
+COPY . $WRK_DIR
 
-#Run build
-RUN go build -o /CZERTAINLY-X509-Compliance-Provider
+# Set working directory
+WORKDIR $WRK_DIR
 
-##
-## Deploy
-##
+# Toggle CGO based on your app requirement. CGO_ENABLED=1 for enabling CGO
+RUN CGO_ENABLED=0 go build -ldflags '-s -w -extldflags "-static"' -o $WRK_DIR/appbin $WRK_DIR
 
-WORKDIR /app
-COPY --from=build /CZERTAINLY-X509-Compliance-Provider /CZERTAINLY-X509-Compliance-Provider
-EXPOSE 8080
-ENTRYPOINT ["/docker-gs-ping"]
+#
+# Run Stage
+#
+FROM alpine:3.15
+
+ENV WRK_DIR /app
+COPY --from=builder $WRK_DIR $WRK_DIR
+
+WORKDIR $WRK_DIR
+
+# Start the app
+CMD ["./appbin"]
