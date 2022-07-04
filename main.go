@@ -2,7 +2,9 @@ package main
 
 import (
 	"CZERTAINLY-X509-Compliance-Provider/cmd"
+	"CZERTAINLY-X509-Compliance-Provider/cmd/attributes"
 	"CZERTAINLY-X509-Compliance-Provider/cmd/compliance"
+	"CZERTAINLY-X509-Compliance-Provider/cmd/health"
 	"CZERTAINLY-X509-Compliance-Provider/cmd/info"
 	"CZERTAINLY-X509-Compliance-Provider/cmd/rules"
 	"context"
@@ -81,8 +83,8 @@ func main() {
 	ctx := context.Background()
 	errs := make(chan error)
 
-	infoSrv, complianceSrv, rulesSrv := createService(sugar)
-	infoEndpoints, complianceEndpoints, rulesEndpoints := createEndPoints(infoSrv, complianceSrv, rulesSrv)
+	infoSrv, complianceSrv, rulesSrv, healthSrv := createService(sugar)
+	infoEndpoints, complianceEndpoints, rulesEndpoints, attributeEndPoints, healthEndPoint := createEndPoints(infoSrv, complianceSrv, rulesSrv, healthSrv)
 
 	// Start the services
 	go func() {
@@ -93,14 +95,14 @@ func main() {
 
 	go func() {
 		fmt.Println("listening on port", *httpAddr)
-		handler := cmd.NewHttpServer(CompositeRouter, ctx, infoEndpoints, complianceEndpoints, rulesEndpoints)
+		handler := cmd.NewHttpServer(CompositeRouter, ctx, infoEndpoints, complianceEndpoints, rulesEndpoints, attributeEndPoints, healthEndPoint)
 		errs <- http.ListenAndServe(*httpAddr, handler)
 	}()
 	fmt.Print(<-errs)
 }
 
 // createService creates the services for the main to use it
-func createService(logger *zap.SugaredLogger) (info.Service, compliance.Service, rules.Service) {
+func createService(logger *zap.SugaredLogger) (info.Service, compliance.Service, rules.Service, health.Service) {
 	var infoSrv info.Service
 	{
 		infoSrv = info.NewService(logger)
@@ -115,15 +117,23 @@ func createService(logger *zap.SugaredLogger) (info.Service, compliance.Service,
 	{
 		rulesSrv = rules.NewService(logger, RULE_FILE_NAME, GROUP_FILE_NAME)
 	}
-	return infoSrv, complianceSrv, rulesSrv
+
+	var healthSrv health.Service
+	{
+		healthSrv = health.NewService()
+	}
+
+	return infoSrv, complianceSrv, rulesSrv, healthSrv
 }
 
 // createEndPoints creates the endpoints for the main to use it
-func createEndPoints(infoService info.Service, complianceService compliance.Service, rulesService rules.Service) (info.EndPoints, compliance.EndPoints, rules.EndPoints) {
+func createEndPoints(infoService info.Service, complianceService compliance.Service, rulesService rules.Service, healthService health.Service) (info.EndPoints, compliance.EndPoints, rules.EndPoints, attributes.EndPoints, health.EndPoints) {
 	infoEndpoints := info.MakeEndpoints(infoService, CompositeRouter)
 	complianceEndpoints := compliance.MakeEndpoints(complianceService)
 	rulesEndpoints := rules.MakeEndpoints(rulesService)
-	return infoEndpoints, complianceEndpoints, rulesEndpoints
+	attributeEndPoint := attributes.MakeEndpoints()
+	healthEndPoint := health.MakeEndpoints(healthService)
+	return infoEndpoints, complianceEndpoints, rulesEndpoints, attributeEndPoint, healthEndPoint
 }
 
 func processError(err error) {
