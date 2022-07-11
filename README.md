@@ -24,7 +24,7 @@ X509 Compliance Provider allows you to perform the following operations:
 
 ## Database requirements
 
-This `Connector` does not require any database as it does not stores any information
+This `Connector` does not require any database as it does not store any information
 
 ## Short Process Description
 
