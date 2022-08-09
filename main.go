@@ -26,11 +26,11 @@ import (
 // Config is the configuration of the server read from yaml or environment variables
 type Config struct {
 	Server struct {
-		Port     string `yaml: "port", envconfig: "SERVER_PORT"`
-		Protocol string `yaml: "protocol", envconfig: "SERVER_PROTOCOL"`
+		Port     string `yaml:"port", envconfig:"SERVER_PORT"`
+		Protocol string `yaml:"protocol", envconfig:"SERVER_PROTOCOL"`
 	} `yaml:"server"`
 	Log struct {
-		Level string `yaml: "level", envconfig: "LOG_LEVEL"`
+		Level string `yaml:"level", envconfig:"LOG_LEVEL"`
 	} `yaml:"log"`
 }
 
