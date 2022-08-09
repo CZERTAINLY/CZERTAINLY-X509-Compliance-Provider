@@ -27,7 +27,7 @@ import (
 type Config struct {
 	Server struct {
 		Port     string `yaml:"port" envconfig:"SERVER_PORT"`
-		Protocol string `yaml:"protocol", envconfig:"SERVER_PROTOCOL"`
+		Protocol string `yaml:"protocol" envconfig:"SERVER_PROTOCOL"`
 	} `yaml:"server"`
 	Log struct {
 		Level string `yaml:"level" envconfig:"LOG_LEVEL"`
