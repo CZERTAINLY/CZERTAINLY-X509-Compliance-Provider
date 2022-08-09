@@ -1,0 +1,42 @@
+name: Build
+on:
+  pull_request:
+    branches: [develop]
+  push:
+    branches: [develop]
+  workflow_dispatch:
+
+jobs:
+  check:
+    if: github.event_name != 'push'
+    name: Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Setup Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: ‘1.18’
+      - name: Verify dependencies
+        run: go mod verify
+      - name: Build
+        run: go build -v ./...
+      - name: Run go vet
+        run: go vet ./...
+      - name: Run tests
+        run: go test -race -vet=off ./...
+  build:
+    if: github.event_name != 'pull_request'
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: docker://sonarsource/sonar-scanner-cli:latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
