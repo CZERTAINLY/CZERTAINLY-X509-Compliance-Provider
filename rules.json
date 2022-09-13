@@ -2637,8 +2637,8 @@
     ]
   },
   {
-    "name":"cus_hashing_algorithm",
-    "description":"Hashing algorithm of the certificate",
+    "name":"cus_signature_algorithm",
+    "description":"Signature algorithm of the certificate",
     "uuid":"b44d3ba2-e65a-11ec-8fea-0242ac120002",
     "kind":"x509",
     "certificateType":"X509",
@@ -2667,48 +2667,48 @@
       {
         "name":"algorithm",
         "uuid":"b44d408e-e65a-11ec-8fea-0242ac120002",
-        "label":"Hashing Algorithm",
+        "label":"Signature Algorithm",
         "type":"STRING",
         "required":true,
         "readOnly":false,
         "editable":false,
         "visible":true,
-        "multiSelect":true,
+        "multiSelect":false,
         "list": true,
-        "description":"Select the hashing algorithm to check for compliance",
+        "description":"Select the signature algorithm to check for compliance",
         "content":[
           {
-            "value":"MD5-RSA"
+            "value":"MD5WITHRSA"
           },
           {
-            "value":"SHA1-RSA"
+            "value":"SHA1WITHRSA"
           },
           {
-            "value":"SHA224-RSA"
+            "value":"SHA224WITHRSA"
           },
           {
-            "value":"SHA256-RSA"
+            "value":"SHA256WITHRSA"
           },
           {
-            "value":"SHA384-RSA"
+            "value":"SHA384WITHRSA"
           },
           {
-            "value":"SHA512-RSA"
+            "value":"SHA512WITHRSA"
           },
           {
-            "value":"ECDSA-SHA1"
+            "value":"SHA1WITHECDSA"
           },
           {
-            "value":"ECDSA-SHA224"
+            "value":"SHA1WITHECDSA"
           },
           {
-            "value":"ECDSA-SHA256"
+            "value":"SHA1WITHECDSA"
           },
           {
-            "value":"ECDSA-SHA384"
+            "value":"SHA1WITHECDSA"
           },
           {
-            "value":"ECDSA-SHA512"
+            "value":"SHA1WITHECDSA"
           }
         ]
       }
@@ -2751,7 +2751,7 @@
         "readOnly":false,
         "editable":false,
         "visible":true,
-        "multiSelect":true,
+        "multiSelect":false,
         "list": true,
         "description":"Select the Curve to check for compliance",
         "content":[
@@ -2809,7 +2809,7 @@
         "name":"length",
         "uuid":"7ed00886-e706-11ec-8fea-0242ac120002",
         "label":"Key Length",
-        "type":"INTEGER",
+        "type":"STRING",
         "required":true,
         "readOnly":false,
         "editable":false,

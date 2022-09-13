@@ -138,8 +138,8 @@ func (s service) evaluateCustomRule(certificate *x509.Certificate, requestRule R
 	}()
 	var compliant ResponseRules
 	switch ruleDefinition.Name {
-	case "cus_hashing_algorithm":
-		s.logger.Info("Evaluating Hashing Algorithm with parameters: ", request)
+	case "cus_signature_algorithm":
+		s.logger.Info("Evaluating Signature Algorithm with parameters: ", request)
 		compliant = HashingAlgorithmValidation(certificate, requestRule, request, ruleDefinition)
 	case "cus_public_key_algorithm":
 		s.logger.Info("Evaluating Public Key Algorithm with parameters: ", request)

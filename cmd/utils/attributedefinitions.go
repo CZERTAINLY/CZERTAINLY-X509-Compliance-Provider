@@ -22,7 +22,7 @@ func GetRequestAttributeValue(attributeName string, attrs []attributes.RequestAt
 	}
 	for _, attribute := range attrs {
 		if attribute.Name == attributeName {
-			return (attribute.Content.(attributes.BaseAttributeContent)).Value
+			return (attribute.Content).(map[string]interface{})["value"]
 		}
 	}
 	return nil

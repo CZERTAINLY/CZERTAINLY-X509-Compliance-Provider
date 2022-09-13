@@ -23,8 +23,10 @@ func HashingAlgorithmValidation(certificate *x509.Certificate, requestRule Reque
 	condition := utils.GetRequestAttributeValue("condition", requestRule.Attributes)
 	value := utils.GetRequestAttributeValue("algorithm", requestRule.Attributes)
 
-	signatureAlgorithm := certificate.SignatureAlgorithmName()
-	isAlgorithmAvailable := utils.Contains(utils.InterfaceAsStringArray(value), signatureAlgorithm)
+	mappings := map[string]string{"MD5WITHRSA": "MD5-RSA", "SHA1WITHRSA": "SHA1-RSA", "SHA224WITHRSA": "SHA224-RSA", "SHA256WITHRSA": "SHA256-RSA", "SHA384WITHRSA": "SHA384-RSA", "SHA512WITHRSA": "SHA512-RSA", "SHA1WITHECDSA": "ECDSA-SHA1", "SHA224WITHECDSA": "ECDSA-SHA224", "SHA256WITHECDSA": "ECDSA-SHA256", "SHA384WITHECDSA": "ECDSA-SHA384", "SHA512WITHECDSA": "ECDSA-SHA512"}
+
+	signatureAlgorithm := certificate.SignatureAlgorithm.String()
+	isAlgorithmAvailable := utils.Contains(utils.InterfaceAsStringArray(mappings[value.(string)]), signatureAlgorithm)
 
 	switch condition {
 	case "Equals":
