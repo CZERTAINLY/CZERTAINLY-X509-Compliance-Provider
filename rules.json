@@ -2809,7 +2809,7 @@
         "name":"length",
         "uuid":"7ed00886-e706-11ec-8fea-0242ac120002",
         "label":"Key Length",
-        "type":"STRING",
+        "type":"INTEGER",
         "required":true,
         "readOnly":false,
         "editable":false,
