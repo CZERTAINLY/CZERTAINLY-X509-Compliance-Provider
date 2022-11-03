@@ -20,8 +20,8 @@ func boolToRuleStatusMapper(boolData bool) (status rules.RuleStatus) {
 
 // HashAlgorithmValidation validates the hash algorithm of the certificate
 func HashingAlgorithmValidation(certificate *x509.Certificate, requestRule RequestRules, request Request, ruleDefinition rules.RuleDefinition) ResponseRules {
-	condition := utils.GetRequestAttributeValue("condition", requestRule.Attributes)
-	value := utils.GetRequestAttributeValue("algorithm", requestRule.Attributes)
+	condition := utils.GetRequestAttributeValue("condition", requestRule.Attributes, true)
+	value := utils.GetRequestAttributeValue("algorithm", requestRule.Attributes, true)
 
 	mappings := map[string]string{"MD5WITHRSA": "MD5-RSA", "SHA1WITHRSA": "SHA1-RSA", "SHA224WITHRSA": "SHA224-RSA", "SHA256WITHRSA": "SHA256-RSA", "SHA384WITHRSA": "SHA384-RSA", "SHA512WITHRSA": "SHA512-RSA", "SHA1WITHECDSA": "ECDSA-SHA1", "SHA224WITHECDSA": "ECDSA-SHA224", "SHA256WITHECDSA": "ECDSA-SHA256", "SHA384WITHECDSA": "ECDSA-SHA384", "SHA512WITHECDSA": "ECDSA-SHA512"}
 
@@ -40,8 +40,8 @@ func HashingAlgorithmValidation(certificate *x509.Certificate, requestRule Reque
 
 // PublicKeyAlgorithmValidation validates the public key algorithm of the certificate
 func PublicKeyAlgorithmValidation(certificate *x509.Certificate, requestRule RequestRules, request Request, ruleDefinition rules.RuleDefinition) ResponseRules {
-	condition := utils.GetRequestAttributeValue("condition", requestRule.Attributes)
-	value := utils.GetRequestAttributeValue("algorithm", requestRule.Attributes)
+	condition := utils.GetRequestAttributeValue("condition", requestRule.Attributes, true)
+	value := utils.GetRequestAttributeValue("algorithm", requestRule.Attributes, true)
 	pubKeyAlgorithm := certificate.PublicKeyAlgorithmName()
 	isAlgorithmAvailable := utils.Contains(utils.InterfaceAsStringArray(value), pubKeyAlgorithm)
 	switch condition {
@@ -55,8 +55,8 @@ func PublicKeyAlgorithmValidation(certificate *x509.Certificate, requestRule Req
 
 // EccCurveValidation validates the curve of the certificate
 func EcCurveValidation(certificate *x509.Certificate, requestRule RequestRules, request Request, ruleDefinition rules.RuleDefinition) ResponseRules {
-	condition := utils.GetRequestAttributeValue("condition", requestRule.Attributes)
-	value := utils.GetRequestAttributeValue("algorithm", requestRule.Attributes)
+	condition := utils.GetRequestAttributeValue("condition", requestRule.Attributes, true)
+	value := utils.GetRequestAttributeValue("algorithm", requestRule.Attributes, true)
 	curve := certificate.PublicKey.(*x509.AugmentedECDSA).Pub.Curve.Params().Name
 	isValid := utils.Contains(utils.InterfaceAsStringArray(value), curve)
 	switch condition {
@@ -70,8 +70,8 @@ func EcCurveValidation(certificate *x509.Certificate, requestRule RequestRules, 
 
 // KeySizeValidation validates the key size of the certificate
 func KeySizeValidator(certificate *x509.Certificate, requestRule RequestRules, request Request, ruleDefinition rules.RuleDefinition) ResponseRules {
-	condition := utils.GetRequestAttributeValue("condition", requestRule.Attributes)
-	value := utils.InterfaceAsInteger(utils.GetRequestAttributeValue("length", requestRule.Attributes))
+	condition := utils.GetRequestAttributeValue("condition", requestRule.Attributes, true)
+	value := utils.InterfaceAsInteger(utils.GetRequestAttributeValue("length", requestRule.Attributes, true))
 	keySize := utils.GetPublicKeySize(certificate)
 
 	switch condition {
