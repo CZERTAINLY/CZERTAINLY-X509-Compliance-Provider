@@ -75,12 +75,12 @@ func TestService_ComplianceCheckAttributes(t *testing.T) {
 	attrs := []attributes.RequestAttributes{{
 		Name:    "condition",
 		UUID:    "7ed00782-e706-11ec-8fea-0242ac120002",
-		Content: attributes.BaseAttributeContent{Value: "Equals"}},
+		Content: []attributes.BaseAttributeContent{{Data: "Equals"}}},
 		{
 			Name:    "length",
 			UUID:    "7ed00886-e706-11ec-8fea-0242ac120002",
-			Content: attributes.BaseAttributeContent{Value: 2048},
-		}}
+			Content: []attributes.BaseAttributeContent{{Data: 2048}}},
+	}
 	rules := []RequestRules{{
 		UUID:       "7ed00480-e706-11ec-8fea-0242ac120002",
 		Attributes: attrs,

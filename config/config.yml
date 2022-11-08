@@ -5,4 +5,4 @@ server:
 
 # Logger related configurations
 log:
-  level: INFO
+  level: PANIC
