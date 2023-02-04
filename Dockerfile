@@ -15,15 +15,21 @@ WORKDIR $WRK_DIR
 # Toggle CGO based on your app requirement. CGO_ENABLED=1 for enabling CGO
 RUN CGO_ENABLED=0 go build -ldflags '-s -w -extldflags "-static"' -o $WRK_DIR/appbin $WRK_DIR
 
+COPY docker /app/docker
+
 #
 # Run Stage
 #
 FROM alpine:3.15
 
-ENV WRK_DIR /app
-COPY --from=builder $WRK_DIR $WRK_DIR
+# add non root user czertainly
+RUN addgroup --system --gid 10001 czertainly && adduser --system --home /opt/czertainly --uid 10001 --ingroup czertainly czertainly
 
-WORKDIR $WRK_DIR
+COPY --from=build /app/docker /
+COPY --from=build /app /opt/czertainly
 
-# Start the app
-CMD ["./appbin"]
+WORKDIR /opt/czertainly
+
+USER 10001
+
+ENTRYPOINT ["/opt/czertainly/entry.sh"]
