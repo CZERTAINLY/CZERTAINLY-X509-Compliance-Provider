@@ -4,8 +4,8 @@
 
 X509 Compliance `Connector` is the implementation of the following `Function Groups` and `Kinds`:
 
-| Function Group | Kind |
-| --- | --- |
+| Function Group        | Kind   |
+|-----------------------|--------|
 | `Compliance Provider` | `x509` |
 
 X509 Compliance Provider is the implementation of compliance check and management for x509 certificates that are managed by CZERTAINLY. This `Connector` performs compliance check for the certificates of type x509. List of items to be considered to determine the compliance of a certificate is administrated by the rules and groups.
@@ -18,13 +18,12 @@ Rules in the X509 Compliance Provider describes the condition that should be app
 
 Groups are the logical grouping of the rules organized by some baseline similarities. A group may contain two or more rules and when a compliance profile is added with the group, all the rules in the group will be applied to the certificate compliance determination
 
-
 X509 Compliance Provider allows you to perform the following operations:
 - Check compliance of x509 Certificate
 
 ## Database requirements
 
-This `Connector` does not require any database as it does not store any information
+This `Connector` does not require any database as it does not persist any data.
 
 ## Short Process Description
 
@@ -32,9 +31,7 @@ Compliance of the certificate is calculated by the use of `Compliance Profiles`.
 
 X509 Compliance Provider consumes ZLint for some rules and groups. To know more about ZLint, refer to [ZLint](https://github.com/zmap/zlint)
 
-
 To know more about the `Core`, refer to [CZERTAINLY Core](https://github.com/3KeyCompany/CZERTAINLY-Core)
-
 
 ## Interfaces
 
@@ -44,9 +41,9 @@ For more information, please refer to the [CZERTAINLY documentation](https://doc
 
 ## Docker container
 
-X509 Compliance `Connector` is provided as a Docker container. Use the `3keycompany/czertainly-x509-compliance-provider:tagname` to pull the required image from the repository. It can be configured using the following environment variables:
+X509 Compliance `Connector` is provided as a Docker container. Use the `harbor.3key.company/czertainly/czertainly-x509-compliance-provider:tagname` to pull the required image from the repository. It can be configured using the following environment variables:
 
-| Variable | Description | Required | Default value |
-| --- | --- | --- | --- |
-| `SERVER_PORT` | Port where the service is exposed | No | 8080 |
-| `LOG_LEVEL` | Logging level for the service | No | INFO |
+| Variable      | Description                       | Required                                      | Default value |
+|---------------|-----------------------------------|-----------------------------------------------|---------------|
+| `SERVER_PORT` | Port where the service is exposed | ![](https://img.shields.io/badge/-NO-red.svg) | `8080`        |
+| `LOG_LEVEL`   | Logging level for the service     | ![](https://img.shields.io/badge/-NO-red.svg) | `INFO`        |
