@@ -2592,7 +2592,7 @@
         {
            "name":"condition",
            "uuid":"166b5cf52-63f2-11ec-90d6-0242ac120013",
-           "type":"DATA",
+           "type":"data",
            "contentType":"STRING",
            "properties":{
               "label":"Condition",
@@ -2618,7 +2618,7 @@
         {
            "name":"algorithm",
            "uuid":"166b5cf52-63f2-11ec-90d6-0242ac120003",
-           "type":"DATA",
+           "type":"data",
            "contentType":"STRING",
            "properties":{
               "label":"Public Key Algorithm",
@@ -2657,7 +2657,7 @@
         {
            "name":"condition",
            "uuid":"b44d3f44-e65a-11ec-8fea-0242ac120002",
-           "type":"DATA",
+           "type":"data",
            "contentType":"STRING",
            "properties":{
               "label":"Condition",
@@ -2683,7 +2683,7 @@
         {
            "name":"algorithm",
            "uuid":"b44d408e-e65a-11ec-8fea-0242ac120002",
-           "type":"DATA",
+           "type":"data",
            "contentType":"STRING",
            "properties":{
               "label":"Signature Algorithm",
@@ -2754,7 +2754,7 @@
         {
            "name":"condition",
            "uuid":"5f6bad5e-e663-11ec-8fea-0242ac120002",
-           "type":"DATA",
+           "type":"data",
            "contentType":"STRING",
            "properties":{
               "label":"Condition",
@@ -2780,7 +2780,7 @@
         {
            "name":"curve",
            "uuid":"5f6bb196-e663-11ec-8fea-0242ac120002",
-           "type":"DATA",
+           "type":"data",
            "contentType":"STRING",
            "properties":{
               "label":"Curve",
@@ -2823,7 +2823,7 @@
         {
            "name":"condition",
            "uuid":"7ed00782-e706-11ec-8fea-0242ac120002",
-           "type":"DATA",
+           "type":"data",
            "contentType":"STRING",
            "properties":{
               "label":"Condition",
@@ -2857,7 +2857,7 @@
         {
            "name":"length",
            "uuid":"7ed00886-e706-11ec-8fea-0242ac120002",
-           "type":"DATA",
+           "type":"data",
            "contentType":"INTEGER",
            "properties":{
               "label":"Key Length",
