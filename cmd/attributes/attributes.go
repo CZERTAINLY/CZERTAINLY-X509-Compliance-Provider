@@ -22,7 +22,7 @@ type (
 		UUID        string                 `json:"uuid,omitempty"`
 		Name        string                 `json:"name,omitempty"`
 		Type        AttributeType          `json:"type,omitempty"`
-		ContentType AttributeContentType   `json:"content_type,omitempty"`
+		ContentType AttributeContentType   `json:"contentType,omitempty"`
 		Description string                 `json:"description,omitempty"`
 		Properties  AttributeProperties    `json:"properties,omitempty"`
 		Content     []BaseAttributeContent `json:"content,omitempty"`

@@ -2593,7 +2593,7 @@
            "name":"condition",
            "uuid":"166b5cf52-63f2-11ec-90d6-0242ac120013",
            "type":"data",
-           "contentType":"STRING",
+           "contentType":"string",
            "properties":{
               "label":"Condition",
               "required":true,
@@ -2619,7 +2619,7 @@
            "name":"algorithm",
            "uuid":"166b5cf52-63f2-11ec-90d6-0242ac120003",
            "type":"data",
-           "contentType":"STRING",
+           "contentType":"string",
            "properties":{
               "label":"Public Key Algorithm",
               "required":true,
@@ -2658,7 +2658,7 @@
            "name":"condition",
            "uuid":"b44d3f44-e65a-11ec-8fea-0242ac120002",
            "type":"data",
-           "contentType":"STRING",
+           "contentType":"string",
            "properties":{
               "label":"Condition",
               "required":true,
@@ -2684,7 +2684,7 @@
            "name":"algorithm",
            "uuid":"b44d408e-e65a-11ec-8fea-0242ac120002",
            "type":"data",
-           "contentType":"STRING",
+           "contentType":"string",
            "properties":{
               "label":"Signature Algorithm",
               "required":true,
@@ -2755,7 +2755,7 @@
            "name":"condition",
            "uuid":"5f6bad5e-e663-11ec-8fea-0242ac120002",
            "type":"data",
-           "contentType":"STRING",
+           "contentType":"string",
            "properties":{
               "label":"Condition",
               "required":true,
@@ -2781,7 +2781,7 @@
            "name":"curve",
            "uuid":"5f6bb196-e663-11ec-8fea-0242ac120002",
            "type":"data",
-           "contentType":"STRING",
+           "contentType":"string",
            "properties":{
               "label":"Curve",
               "required":true,
@@ -2824,7 +2824,7 @@
            "name":"condition",
            "uuid":"7ed00782-e706-11ec-8fea-0242ac120002",
            "type":"data",
-           "contentType":"STRING",
+           "contentType":"string",
            "properties":{
               "label":"Condition",
               "required":true,
@@ -2858,7 +2858,7 @@
            "name":"length",
            "uuid":"7ed00886-e706-11ec-8fea-0242ac120002",
            "type":"data",
-           "contentType":"INTEGER",
+           "contentType":"integer",
            "properties":{
               "label":"Key Length",
               "required":true,
