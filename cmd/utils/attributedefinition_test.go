@@ -25,9 +25,10 @@ func TestGetAttributeValue(t *testing.T) {
 	attrValue := []attributes.BaseAttributeContent{{Data: "testing"}}
 	attrs := []attributes.Attributes{
 		attributes.Attributes{
-			UUID: "df52f720-f239-11ec-b939-0242ac120002",
-			Name: "Test",
-			Type: "STRING",
+			UUID:        "df52f720-f239-11ec-b939-0242ac120002",
+			Name:        "Test",
+			Type:        "data",
+			ContentType: "string",
 			Properties: attributes.AttributeProperties{
 				Label:       "Test",
 				Required:    false,
