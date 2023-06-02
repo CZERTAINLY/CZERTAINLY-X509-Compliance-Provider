@@ -36,7 +36,7 @@ func TestGetRuleUuidFromName(t *testing.T) {
 }
 
 func TestService_GetRules(t *testing.T) {
-	rules, err := tService.GetRules("x509", []string{"X509"})
+	rules, err := tService.GetRules("x509", []string{"X.509"})
 	if err != nil {
 		t.Error("Error", err)
 	}
