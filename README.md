@@ -1,6 +1,6 @@
 # CZERTAINLY X509 Compliance Provider
 
-> This repository is part of the commercial open-source project CZERTAINLY, but the connector is available under subscription. You can find more information about the project at [CZERTAINLY](https://github.com/3KeyCompany/CZERTAINLY) repository, including the contribution guide.
+> This repository is part of the commercial open-source project CZERTAINLY, but the connector is available under subscription. You can find more information about the project at [CZERTAINLY](https://github.com/CZERTAINLY/CZERTAINLY) repository, including the contribution guide.
 
 X509 Compliance `Connector` is the implementation of the following `Function Groups` and `Kinds`:
 
@@ -31,17 +31,17 @@ Compliance of the certificate is calculated by the use of `Compliance Profiles`.
 
 X509 Compliance Provider consumes ZLint for some rules and groups. To know more about ZLint, refer to [ZLint](https://github.com/zmap/zlint)
 
-To know more about the `Core`, refer to [CZERTAINLY Core](https://github.com/3KeyCompany/CZERTAINLY-Core)
+To know more about the `Core`, refer to [CZERTAINLY Core](https://github.com/CZERTAINLY/CZERTAINLY-Core)
 
 ## Interfaces
 
-X509 Compliance `Connector` implements `Compliance Provider` interfaces. To learn more about the interfaces and end points, refer to the [CZERTAINLY Interfaces](https://github.com/3KeyCompany/CZERTAINLY-Interfaces).
+X509 Compliance `Connector` implements `Compliance Provider` interfaces. To learn more about the interfaces and end points, refer to the [CZERTAINLY Interfaces](https://github.com/CZERTAINLY/CZERTAINLY-Interfaces).
 
 For more information, please refer to the [CZERTAINLY documentation](https://docs.czertainly.com).
 
 ## Docker container
 
-X509 Compliance `Connector` is provided as a Docker container. Use the `harbor.3key.company/czertainly/czertainly-x509-compliance-provider:tagname` to pull the required image from the repository. It can be configured using the following environment variables:
+X509 Compliance `Connector` is provided as a Docker container. Use the `docker.io/czertainly/czertainly-x509-compliance-provider:tagname` to pull the required image from the repository. It can be configured using the following environment variables:
 
 | Variable      | Description                       | Required                                      | Default value |
 |---------------|-----------------------------------|-----------------------------------------------|---------------|
