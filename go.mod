@@ -1,6 +1,6 @@
 module CZERTAINLY-X509-Compliance-Provider
 
-go 1.18
+go 1.24
 
 require (
 	github.com/go-kit/kit v0.12.0
