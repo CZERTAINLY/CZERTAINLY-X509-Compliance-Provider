@@ -23,6 +23,8 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+var version = "1.3.1"
+
 // Config is the configuration of the server read from yaml or environment variables
 type Config struct {
 	Server struct {
@@ -73,7 +75,7 @@ func main() {
 		panic(err)
 	}
 	defer logger.Sync()
-	logger.Info("Starting CZERTAINLY-X509-Compliance-Provider")
+	logger.Info("Starting CZERTAINLY-X509-Compliance-Provider", zap.String("version", version))
 	logger.WithOptions()
 	defer logger.Sync()
 	sugar := logger.Sugar()
