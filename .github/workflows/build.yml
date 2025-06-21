@@ -23,7 +23,7 @@ jobs:
         uses: golangci/golangci-lint-action@v8
         with:
           # Require: The version of golangci-lint to use.
-          version: v1.64.8
+          version: latest
       - name: Verify dependencies
         run: go mod verify
       - name: Build
