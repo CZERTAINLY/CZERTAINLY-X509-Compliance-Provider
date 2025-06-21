@@ -1,6 +1,7 @@
 package utils
 
 import (
+	//nolint:staticcheck // SA1019 – we keep DSA support for legacy certs
 	"crypto/dsa"
 	"crypto/ecdsa"
 	"crypto/rsa"
