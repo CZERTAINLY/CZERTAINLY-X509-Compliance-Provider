@@ -14,7 +14,7 @@ func init() {
 	defer func(logger *zap.Logger) {
 		err := logger.Sync()
 		if err != nil {
-
+			logger.Error("Error syncing logger", zap.Error(err))
 		}
 	}(logger)
 	sugar := logger.Sugar()

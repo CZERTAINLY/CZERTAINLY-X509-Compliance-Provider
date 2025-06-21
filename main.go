@@ -77,7 +77,7 @@ func main() {
 	defer func(logger *zap.Logger) {
 		err := logger.Sync()
 		if err != nil {
-
+			logger.Error("Error syncing logger", zap.Error(err))
 		}
 	}(logger)
 	logger.Info("Starting CZERTAINLY-X509-Compliance-Provider", zap.String("version", version))
@@ -85,7 +85,7 @@ func main() {
 	defer func(logger *zap.Logger) {
 		err := logger.Sync()
 		if err != nil {
-
+			logger.Error("Error syncing logger", zap.Error(err))
 		}
 	}(logger)
 	sugar := logger.Sugar()
