@@ -160,7 +160,12 @@ func readConfigFile(cfg *Config) {
 	if err != nil {
 		processError(err)
 	}
-	defer f.Close()
+	defer func(f *os.File) {
+		err := f.Close()
+		if err != nil {
+			processError(fmt.Errorf("error closing config file: %w", err))
+		}
+	}(f)
 
 	decoder := yaml.NewDecoder(f)
 	err = decoder.Decode(cfg)

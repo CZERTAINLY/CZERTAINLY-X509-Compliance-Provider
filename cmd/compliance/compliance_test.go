@@ -95,5 +95,10 @@ func TestService_ComplianceCheckAttributes(t *testing.T) {
 		Rules:       rules,
 	}
 
-	tService.ComplianceCheck("x509", request)
+	_, err := tService.ComplianceCheck("x509", request)
+	if err != nil {
+		// log request and error for debugging
+		logger.Error("Compliance check failed", zap.Error(err), zap.Any("request", request))
+		return
+	}
 }
