@@ -20,7 +20,10 @@ func NewService(logger *zap.SugaredLogger) Service {
 func (s service) GetInfo(router *mux.Router) ([]Response, error) {
 	s.logger.Info("Entering GetInfo method")
 	endpoints = endpoints[:0]
-	router.Walk(s.gorillaWalkFn)
+	err := router.Walk(s.gorillaWalkFn)
+	if err != nil {
+		return nil, err
+	}
 	var infoResponse []Response
 	infoResponse = append(infoResponse, Response{
 		FunctionGroupCode: "complianceProvider",

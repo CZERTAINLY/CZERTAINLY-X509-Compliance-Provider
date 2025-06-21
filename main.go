@@ -74,10 +74,20 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	defer logger.Sync()
+	defer func(logger *zap.Logger) {
+		err := logger.Sync()
+		if err != nil {
+
+		}
+	}(logger)
 	logger.Info("Starting CZERTAINLY-X509-Compliance-Provider", zap.String("version", version))
 	logger.WithOptions()
-	defer logger.Sync()
+	defer func(logger *zap.Logger) {
+		err := logger.Sync()
+		if err != nil {
+
+		}
+	}(logger)
 	sugar := logger.Sugar()
 
 	// Create the services

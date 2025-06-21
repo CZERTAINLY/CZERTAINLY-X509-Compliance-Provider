@@ -16,7 +16,12 @@ var GROUP_FILE_NAME = "../../groups.json"
 
 func init() {
 	logger, _ = zap.NewProduction()
-	defer logger.Sync()
+	defer func(logger *zap.Logger) {
+		err := logger.Sync()
+		if err != nil {
+			
+		}
+	}(logger)
 	sugar := logger.Sugar()
 	tService = NewService(sugar)
 	rService = rules.NewService(sugar, RULE_FILE_NAME, GROUP_FILE_NAME)
