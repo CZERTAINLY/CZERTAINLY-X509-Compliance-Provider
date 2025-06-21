@@ -112,8 +112,6 @@ func (s service) computeOverallStatus(responseRules []ResponseRules) (status Sta
 			break
 		} else if s.Status == rules.OK {
 			isNotApplicable = false
-		} else {
-			//Nothing happens
 		}
 	}
 	s.logger.Info("Compliant Status: ", isNonCompliant)

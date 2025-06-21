@@ -16,7 +16,12 @@ var GROUP_FILE_NAME = "../../groups.json"
 
 func init() {
 	logger, _ = zap.NewProduction()
-	defer logger.Sync()
+	defer func(logger *zap.Logger) {
+		err := logger.Sync()
+		if err != nil {
+			logger.Error("Error syncing logger", zap.Error(err))
+		}
+	}(logger)
 	sugar := logger.Sugar()
 	tService = NewService(sugar)
 	rService = rules.NewService(sugar, RULE_FILE_NAME, GROUP_FILE_NAME)
@@ -90,5 +95,10 @@ func TestService_ComplianceCheckAttributes(t *testing.T) {
 		Rules:       rules,
 	}
 
-	tService.ComplianceCheck("x509", request)
+	_, err := tService.ComplianceCheck("x509", request)
+	if err != nil {
+		// log request and error for debugging
+		logger.Error("Compliance check failed", zap.Error(err), zap.Any("request", request))
+		return
+	}
 }

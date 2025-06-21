@@ -11,7 +11,12 @@ var tService Service
 
 func init() {
 	logger, _ = zap.NewProduction()
-	defer logger.Sync()
+	defer func(logger *zap.Logger) {
+		err := logger.Sync()
+		if err != nil {
+			logger.Error("Error syncing logger", zap.Error(err))
+		}
+	}(logger)
 	sugar := logger.Sugar()
 	tService = NewService(sugar)
 }

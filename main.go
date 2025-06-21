@@ -23,6 +23,8 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+var version = "1.3.1"
+
 // Config is the configuration of the server read from yaml or environment variables
 type Config struct {
 	Server struct {
@@ -72,10 +74,20 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	defer logger.Sync()
-	logger.Info("Starting CZERTAINLY-X509-Compliance-Provider")
+	defer func(logger *zap.Logger) {
+		err := logger.Sync()
+		if err != nil {
+			logger.Error("Error syncing logger", zap.Error(err))
+		}
+	}(logger)
+	logger.Info("Starting CZERTAINLY-X509-Compliance-Provider", zap.String("version", version))
 	logger.WithOptions()
-	defer logger.Sync()
+	defer func(logger *zap.Logger) {
+		err := logger.Sync()
+		if err != nil {
+			logger.Error("Error syncing logger", zap.Error(err))
+		}
+	}(logger)
 	sugar := logger.Sugar()
 
 	// Create the services
@@ -148,7 +160,12 @@ func readConfigFile(cfg *Config) {
 	if err != nil {
 		processError(err)
 	}
-	defer f.Close()
+	defer func(f *os.File) {
+		err := f.Close()
+		if err != nil {
+			processError(fmt.Errorf("error closing config file: %w", err))
+		}
+	}(f)
 
 	decoder := yaml.NewDecoder(f)
 	err = decoder.Decode(cfg)
