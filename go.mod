@@ -3,7 +3,7 @@ module CZERTAINLY-X509-Compliance-Provider
 go 1.24
 
 require (
-	github.com/go-kit/kit v0.12.0
+	github.com/go-kit/kit v0.13.0
 	github.com/gorilla/mux v1.8.0
 	github.com/zmap/zcrypto v0.0.0-20220525011035-18446b77d06c
 	github.com/zmap/zlint/v3 v3.3.1
