@@ -7,7 +7,7 @@ require (
 	github.com/gorilla/mux v1.8.0
 	github.com/zmap/zcrypto v0.0.0-20220525011035-18446b77d06c
 	github.com/zmap/zlint/v3 v3.3.1
-	go.uber.org/zap v1.19.1
+	go.uber.org/zap v1.28.0
 )
 
 require (
@@ -15,7 +15,7 @@ require (
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
 	github.com/weppos/publicsuffix-go v0.15.1-0.20220329081811-9a40b608a236 // indirect
 	go.uber.org/atomic v1.9.0 // indirect
-	go.uber.org/multierr v1.7.0 // indirect
+	go.uber.org/multierr v1.10.0 // indirect
 	golang.org/x/crypto v0.36.0 // indirect
 	golang.org/x/net v0.38.0 // indirect
 	golang.org/x/text v0.23.0 // indirect
